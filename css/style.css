@@ -1,0 +1,727 @@
+/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+	display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+* {
+	outline: none;
+	margin: 0;
+	/*font-family: 'Nunito', sans-serif;*/
+	
+}
+
+ul{
+	list-style: none;
+}
+
+article ul li{
+	list-style:disc;
+	list-style-position: inside;
+	padding-left: 5px;
+	line-height: 1.4em;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+a {
+	color: #06F;
+	font-family: Calibri, Verdana, Geneva, sans-serif;
+}
+
+/*p {
+	font-size: 12px;
+	line-height: 1.3em;
+}
+*/
+label {
+	display: block;
+	font-size: 12px;
+}
+
+input.text,
+select {
+	margin-top: 6px;
+	margin-bottom: 12px;
+	width: 280px;
+	padding: .4em;
+}
+
+body {
+	height: 100%;
+	font-family: 'Nunito', sans-serif;
+	/*font-family: "Lucida Grande", "Lucida Sans", Arial, Helvetica, sans-serif, Tahoma, Verdana;*/
+	color: #3D4350;
+	margin: 0;
+	padding: 0;
+	/*background:#6B97BF url(../img/body-bg.png);*/
+	background-color: #6B97BF;
+	overflow: hidden;
+}
+
+.hide{
+	display: none;
+}
+
+label{
+	font-family: 'Nunito', sans-serif;
+	/*font-family: "Lucida Grande", "Lucida Sans", Arial, Helvetica, sans-serif, Tahoma, Verdana;*/
+}
+
+/*scrollbars webkit*/
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;*/
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(204,204,204,0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(204,204,204,0.4); 
+}
+/*end scrollbars webkit*/
+
+#category{
+	color: #222;
+	font-size: 12px;
+}
+
+#new-category,
+#new-category-label{
+	display: none;
+}
+
+.validateTips{
+	color: red;
+	padding-bottom: 10px;
+}
+
+.epiceditors {
+	
+}
+
+nav{
+	border-bottom: 1px solid #626B73;
+	-webkit-box-shadow: 0px 0px 6px 2px #222;
+	height: 35px;
+	background-color: white;
+}
+
+nav #navLeft {
+	float: left;
+	background: url(../img/logo.png) left no-repeat;
+	background-size: 6%;
+	background-position: 6px 9px;
+	padding-left: 35px;
+}
+
+nav #navRight {
+	float: right;
+	margin-top: 7px;
+	margin-right: 5px;
+	font-family:"Arial Narrow", Arial, sans-serif; 
+	/*font-family: 'Open Sans Condensed', sans-serif;*/
+	font-size: 1.2em;
+	color:#000;
+}
+
+nav #navRight ul li{
+	float:left;
+}
+
+nav #navRight ul li{
+	background: url(../img/drop-menu-indicator.png) right no-repeat;
+	padding-right: 17px;
+	margin-right: 10px;
+	cursor:pointer;
+
+}
+
+nav #navRight ul li:last-child{
+	border-left: 1px solid #999;
+	padding-left:10px;
+}
+
+/*menu*/
+.libraries-hover {
+	background-color: #FFF;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+nav #navRight #libraries-dropdown{	
+	display: none;
+	z-index: 2;
+	position: absolute;
+	background-color: #FFF;	
+	right: 152px;
+	top:4px;
+	width:275px;
+	border:1px solid #999;
+	border-radius: 10px;
+	padding-bottom:10px;
+}
+
+nav #navRight #libraries-dropdown ul#libraries-menu li.menu-header,nav #navRight #libraries-dropdown ul#libraries-menu li.menu-header:hover{		
+	background: transparent url(../img/drop-menu-indicator.png) right no-repeat;
+	background-position: 249px 7px;
+	padding: 0;
+	padding-left: 182px;
+	padding-bottom: 10px;
+	margin-right: 10px;
+	cursor: pointer;
+	font-size: 1.1em;
+}
+
+nav #navRight #libraries-dropdown ul#libraries-menu li.menu-header:hover{
+	font-size: 1.1em;
+	border:none;
+	color:#000;
+}
+
+nav #navRight #libraries-dropdown ul#libraries-menu{
+	padding: 10px;
+	padding-top:2px;
+	font-family:"Arial Narrow", Arial, sans-serif; 
+	/*font-family: 'Open Sans Condensed', sans-serif;*/	
+	font-size: 0.9em;
+	width:275px;
+	cursor:pointer;
+}
+
+nav #navRight #libraries-dropdown ul#libraries-menu li{
+	background:none;
+	border:none;
+	padding: 5px 10px;
+	color: #000;
+	width:234px;
+}
+
+nav #navRight #libraries-dropdown ul#libraries-menu li:hover{
+	background: #405A73;
+	color: #FFF;
+	border: 1px solid #333;
+	border-radius: 5px;
+	padding:4px 10px;
+	cursor:pointer;
+}
+
+nav #navRight #libraries-dropdown ul#libraries-menu li.divider{
+	border-bottom: 2px solid #999;
+	margin-bottom: 10px;
+	border-radius: 0px;
+	/*width:233px;*/
+}
+
+nav #navRight #libraries-dropdown ul#libraries-menu li.divider:hover{
+	background: transparent;
+	border: 2px solid #FFF;
+	border-right-width:0px;	
+	border-left-width:0px;
+	border-bottom-color:#999;
+	border-radius: 0px;
+	margin-bottom: 10px;
+	cursor:default;
+}
+/*end menu*/
+
+nav #searchbox {
+	background-color:#FFF;
+	border: 1px #BBD7FF solid;
+	-webkit-box-shadow: 2px 2px 4px 1px #E6E6E6;
+	height: 20px;
+	margin-top: 5px;
+	margin-left: 5px;
+	width: 315px;
+	float: left;
+	padding-left: 3px;
+}
+
+nav #searchbox input[type="text"] {
+	background-color:transparent;
+	border: none;
+	outline: none;
+	height: 20px;
+	width: 282px;
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+
+nav #searchicon {
+	background: transparent url(../img/search-icon.png) no-repeat;
+	background-size: 14px 14px;
+	background-position: 8px 7px;
+	border: none;
+	float: right;
+	margin-top: -5px;
+	margin-right: -5px;
+	width: 32px;
+	height: 32px;
+	outline: none;
+	cursor: pointer;
+}
+
+nav #search-options {
+	font-size: 0.8em;
+	margin-top: 8px;
+	padding-left: 10px;
+	float: left;
+}
+
+nav #search-options a {
+	text-decoration: none;
+	outline: none;
+}
+
+#library-name {
+	padding: 7px 0 0 5px;
+}
+
+#library-name h1 {
+	color: white;
+	padding: 0;
+	margin: 0;
+	float: left;
+	font-family:"Arial Narrow", Arial, sans-serif; 
+	/*font-family: 'Open Sans Condensed', sans-serif;*/
+	font-size: 1.7em;
+	font-weight: normal;
+}
+
+#library-name h1.edit-border{
+	border: 1px solid #000;
+	width: 25%;
+	background-color: #DFDFDF;
+	color: #000;
+	font-size: 1.5em;
+	padding: 2px;
+	padding-bottom: 5px;
+}
+
+#library-name #settings {
+	float: right;
+	margin-right: 10px;
+	cursor: pointer;
+	padding: 5px;
+	z-index: 3;
+	position: absolute;
+	right: 0px;
+	top: 40px;
+	height:23px;
+}
+
+.settings-hover {
+	background-color: #405A73;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+#library-name #settings-dropdown{
+	display: none;
+	z-index: 2;
+	position: absolute;
+	background-color: #405A73;	
+	right: 10px;
+	top:40px;
+	width: 275px;
+	border-radius: 10px;
+}
+
+#library-name #settings-dropdown ul#settings-menu{
+	padding: 10px;
+	font-family:"Arial Narrow", Arial, sans-serif; 
+	/*font-family: 'Open Sans Condensed', sans-serif;*/	
+	font-size: 1.1em;
+}
+
+#library-name #settings-dropdown ul#settings-menu li{
+	padding: 5px 10px;
+	color: #fff;
+	width:200px;
+}
+
+#library-name #settings-dropdown ul#settings-menu li:hover{
+	background: #F5F5F5;
+	color: #000;
+	border: 1px solid #F5F5F5;
+	border-radius: 5px;
+	padding:4px 10px;
+	cursor:pointer;
+}
+
+#library-name #settings-dropdown ul#settings-menu li.divider{
+	border-bottom: 2px solid white;
+	margin-bottom: 10px;
+	border-radius: 0px;
+	/*width:233px;*/
+}
+
+#library-name #settings-dropdown ul#settings-menu li.divider:hover{
+	background: transparent;
+	border: 2px solid #405A73;
+	border-right-width:0px;	
+	border-left-width:0px;
+	border-bottom-color:#FFF;
+	border-radius: 0px;
+	margin-bottom: 10px;
+	cursor:default;
+}
+
+/*save|cancel buttons*/
+#edit-library-controls{
+	display: none;
+	float: right;
+	margin-top: 2px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+#edit-library-controls button{
+	border: 1px solid #333;
+	border-radius: 5px;
+	background-color:#DFDFDF;
+	font-family:"Arial Narrow", Arial, sans-serif; 
+	/*font-family: 'Open Sans Condensed', sans-serif;*/
+	font-size: 1.0em;
+	padding: 3px 20px;
+}
+
+#edit-library-controls button:hover{	
+	background-color:#EAEAEA;
+}
+
+.checked{
+	display: none;
+}
+
+.unchecked{
+
+}
+
+aside#left-nav{
+	border-top: 2px solid #405A73;
+	border-right: 2px solid #405A73;
+	-webkit-border-top-right-radius: 8px;
+	-moz-border-radius: 8px;
+	position: absolute;
+	top: 80px;
+	bottom: 0;
+	left: 0;
+	width: 250px;
+	background-color: #405A73;
+	overflow-y: auto;
+	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch;
+}
+
+aside#left-nav a {
+	color: #000;
+	text-decoration: none;
+}
+
+aside#left-nav > ul {
+	-webkit-padding-start: 0;
+	margin: 0;
+	margin-bottom: 2px;
+	list-style-type: none;
+	font-size: 1.0em;
+	background-color: #EBEBEB;
+}
+
+aside#left-nav > ul li {
+	margin-left: 0px;
+	margin-top: 0px;
+	padding: 0px;
+	padding-left: 9px;
+	line-height: 1.6em;
+	background-color: #405A73;
+	cursor: default;
+	color: #FFF;
+	text-transform: uppercase;
+	font-family:"Arial Narrow", Arial, sans-serif; 
+	/*font-family: 'Open Sans Condensed', sans-serif;*/
+	padding-right: 3px;
+}
+
+aside#left-nav > ul li div.checkbox{
+	display: none;
+	color: black;
+	width: 20px;
+	border-right: 1px solid #EAEAEA;
+}
+
+aside#left-nav > ul li span.category {
+	font-size: 1.1em;
+	line-height: 1.5em;
+}
+
+aside#left-nav ul li ul.sub-menu li {
+	margin-left: -6px;
+	margin-top: 0px;
+	background-color: white;
+	font-size: 1.1em;
+	cursor: pointer;
+}
+
+aside#left-nav ul ul.sub-menu li a {
+	background-color:transparent;
+	font-size: 0.9em;
+	margin: 0;
+	padding-left: 13px;
+	cursor: pointer;
+	display: inline-block;
+	text-transform: none;
+	font-family:"Arial Narrow", Arial, sans-serif; 
+	/*font-family: 'Open Sans Condensed', sans-serif;*/
+	/***this was the change that I made to ensure the highlight on hover. oops, it didn't work***/
+	/*width: 100%;*/
+	margin-left: -10px;
+}
+
+/*aside#left-nav ul li ul.sub-menu li a:hover {
+	background-color:#D1E4F4;
+	color:#000;
+}
+*/
+
+aside#left-nav ul li ul.sub-menu li:hover {
+	background-color:#D1E4F4;
+	color:#000;
+}
+
+article[tab]{
+	display:none;
+}
+
+/* Hack for IE not supporting :not css selector */
+article[tab=overview]{
+	display:block;
+}
+
+section#content-container {
+	/*border-top: 2px solid #626B73;
+	border-left: 2px solid #626B73;*/
+	-webkit-border-top-left-radius: 8px;
+	-moz-border-radius: 8px;
+	background-color: #FFF;
+	position: absolute;
+	top: 80px;
+	bottom: 0;
+	right: 0;
+	left: 255px;
+	overflow: hidden;
+}
+
+section#content-container h1 {
+	font-size: 1.5em;
+	font-weight: normal;
+}
+
+section#content-container h2 {
+	font-family:"Arial Narrow", Arial, sans-serif; 
+	/*font-family: 'Open Sans Condensed', sans-serif;*/
+	font-size: 1.3em;
+	font-weight: normal;
+	color:#000;
+	margin-top: 20px;
+	margin-bottom: 5px;
+	border-bottom: 1px solid;
+	padding-bottom: 3px;
+}
+
+section#content-container p, 
+section#content-container li {
+	font-size: 0.9em;
+	line-height: 1.3em;
+}
+
+section#content-container p{
+	padding-bottom:10px;
+}
+
+section#content-container header {
+	padding: 5px 10px 0 10px;
+	height: 25px;
+}
+
+section#content-container header h1 {
+	float: left;
+	font-family:"Arial Narrow", Arial, sans-serif; 
+	/*font-family: 'Open Sans Condensed', sans-serif;*/
+}
+
+section#content-container div#toolbar {
+	background-color:#D1E4F4;
+	/*background-color:#E5E5E5;*/
+	/*background-image: url("../img/toolbar-grad.png");
+	background-image: -webkit-linear-gradient(top, #F9F9F9, #A0A0A0);
+	background-image: -ms-linear-gradient(top, #F9F9F9, #A0A0A0);*/
+	border: 1px solid #999;
+	border-left: none;
+	border-right: none;
+	height: 33px;
+	padding: 0 10px;
+	margin: 10px 0 0 -10px;
+}
+
+section#content-container div#toolbar ul#tabs {
+	float: left;
+	text-transform: uppercase;
+	font-family:"Arial Narrow", Arial, sans-serif; 
+	/*font-family: 'Open Sans Condensed', sans-serif;*/
+	margin: 0;
+	padding: 0;
+	height: 33px;
+}
+
+section#content-container div#toolbar ul#tabs li.selected {
+	/*background-image: -webkit-linear-gradient(top, #BEBEBE, #888);*/
+	background-color:#405A73;	
+	/*background-color:#999;*/
+	color: white;
+	cursor: default;
+}
+
+section#content-container div#toolbar ul#tabs li {
+	float: left;
+	font-size: 0.8em;
+	list-style-type: none;
+	padding: 8px 8px 0;
+	margin: 0;
+	height: 26px;
+	color: #000;
+	border-right: 1px solid #999;
+	/*border-left: 1px solid #CCC;*/
+	text-transform: uppercase;
+	letter-spacing:0.1em;
+	cursor: pointer;
+}
+
+section#content-container div#toolbar a#add-remove {
+	font-size: 0.9em;
+	float: right;
+	margin-top: 10px;
+	color:#CC0033;
+	text-decoration: none;
+	border: 0;
+}
+
+section#content-container div#content {
+	position: absolute;
+	bottom: 0;
+	top: 76px;
+	padding: 5px 20px;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+footer{
+	height: 5px;
+}

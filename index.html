@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>waxvine</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    
+    <!--google fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Nunito:300' rel='stylesheet' type='text/css'>
+    
+    <link rel="icon shortcut" href="img/favicon.png" type="image/png"/>        
+    
+    <!--app icon for use when creating home screen shortcut-->
+    <!--<link rel="apple-touch-icon" href="../apple-touch-icon.png" /> -->
+    
+    <!--allow for full screen dispay on ipad-->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!--prevent phone number detection-->
+    <meta name="format-detection" content="telephone=no" />    
+  </head>
+    
+  <body>
+    <header>
+      <nav>
+        <div id="navLeft">
+          <form id="searchform" action="">
+            <div id="searchbox">
+              <input type="text" name="s" class="searchfield" value="" onfocus="this.value=''" placeholder="Search for solutions">
+              <a href="javascript:document.searchform.submit()" id="searchicon" title="Search!"><!--blank--></a>
+            </div>
+            <!--<div id="search-options"> | <a href="#">Search Options</a></div>-->
+          </form>       
+        </div>
+        <div id="navRight">
+          <ul>
+            <li id="libraries-label" class="">Libraries</li> 
+            <div id="libraries-dropdown">
+              <ul id="libraries-menu">
+		        <li class="menu-header">Libraries</li> 
+                <li class="divider"><!----></li>
+                <li id="new-library">New Library</li>
+                <li>View all libraries</li>
+              </ul>
+            </div>
+            <li>Awesome User</li>
+          </ul>
+        </div>
+      </nav>
+      <section id="library-name">
+        <h1 contenteditable="false">Library Name</h1>
+        <!--settings-->   
+        <div id="settings"> 
+          <img src="img/settings-hover.png" id="settings-icon" width="24" height="24" alt="settings">        
+        </div>
+        <div id="settings-dropdown">
+            <ul id="settings-menu">
+              <li id="edit-library">Edit Library</li>
+              <li id="clone-library">Clone Library</li>
+              <li id="delete-library">Delete Library</li>
+              <li>Add User</li>
+              <li class="divider"><!----></li>
+              <li>Set as Default Library</li>
+              <li>Manage Users &amp; Permissions</li>
+            </ul>
+        </div>
+        <div id="edit-library-controls">
+        	<button id="library-save">Save</button>
+        	<button id="library-cancel">Cancel</button>
+        </div>
+      </section>
+    </header>
+      
+    <aside id="left-nav">
+			<ul id="component-list"><!-- placeholder --></ul>
+		</aside>
+    	<section id="content-container">
+			<header>
+				<h1 id="component-name">Some Component</h1>
+			</header>
+			<div id="toolbar">
+				<ul id="tabs">
+					<li tab="overview" class="selected">overview</li>
+					<li tab="implementation">implementation</li>
+					<li tab="usability">usability</li>
+					<li tab="performance">performance</li>
+				</ul>
+				<a href="#" id="add-remove">- Remove from library</a>
+			</div>
+			<div id="content">
+				<!-- Placeholder for content -->
+			</div>
+		</section>
+		<script id="component-list-template" type="text/x-handlebars-template">
+			{{#each category}}
+			<li>
+				<span class="category">{{this.category-label}}</span>
+				<ul class="sub-menu">
+					{{#each component}}
+					<li>
+						<div class="checkbox">
+							<img class="unchecked" src="img/empty-check-box.png" width="15px" alt="" title="Add to library"/>
+							<img class="checked" src="img/check-box.png" width="15px" alt="" title="Remove from library" />
+						</div>
+						<a {{#if default-component}} default-component {{/if}} component="{{component-name}}">{{component-label}}</a>
+					</li>
+					{{/each}}
+				</ul>
+			</li>
+			{{/each}}
+		</script>
+		<script type="text/javascript" src="js/lib/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript" src="js/lib/handlebars-1.0.rc.1.js"></script>
+		<script type="text/javascript" src="js/lib/json2.js"></script>
+    	<script type="text/javascript" src="js/waxvine.js"></script>
+	</body>
+</html>
