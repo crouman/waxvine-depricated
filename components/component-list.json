@@ -1,40 +1,3 @@
-{"category" :[
-	{
-		"category-label" : "User Input",
-		"component" : [
-			{"component-name": "auto-complete","component-label": "Auto-complete", "default-component": true},
-			{"component-name": "hint-text","component-label": "Hint Text"},
-			{"component-name": "menu","component-label": "Menu"},
-			{"component-name": "modal-panel","component-label": "Modal Panel"},
-			{"component-name": "time-entry","component-label": "Time Entry"},
-			{"component-name": "toolbar","component-label": "Toolbar"}
-		]
-	},
-	{
-		"category-label" : "Data Management & Display",
-		"component" : [
-			{"component-name": "filtering","component-label": "Filtering"},
-			{"component-name": "paging","component-label": "Paging"},
-			{"component-name": "sorting","component-label": "Sorting"},
-			{"component-name": "tree","component-label": "Tree"}
-		]
-	},
-	{
-		"category-label" : "Page Layout",
-		"component" : [
-			{"component-name": "hide-show","component-label": "Hide/Show"},
-			{"component-name": "tabs","component-label": "Tabs"},
-			{"component-name": "sorting","component-label": "Sorting"},
-			{"component-name": "tree","component-label": "Tree"}
-		]
-	},
-	{
-		"category-label" : "Messaging & Help",
-		"component" : [
-			{"component-name": "dialog","component-label": "Dialog"},
-			{"component-name": "form-validation","component-label": "Form Validation"},
-			{"component-name": "help","component-label": "Help"},
-			{"component-name": "messaging","component-label": "Messaging"},
 			{"component-name": "progress-indicator","component-label": "Progress Indicator"},
 			{"component-name": "tool-tip","component-label": "Tool-tip"}
 		]
@@ -42,13 +5,21 @@
 	{
 		"category-label" : "Multimedia",
 		"component" : [
-			{"component-name": "video","component-label": "Video"},
-			{"component-name": "slide-show","component-label": "Slide Show"},
-			{"component-name": "lightbox","component-label": "Lightbox"}
+			{"component-name": "audio-video","component-label": "Audio & Video"},
+			{"component-name": "lightbox","component-label": "Lightbox"},
+			{"component-name": "slide-show","component-label": "Slide Show"}
 		]
 	},
 	{
-		"category-label" : "Effects",
+		"category-label" : "Visuals",
+		"component" : [
+			{"component-name": "color-schemes","component-label": "Color Schemes"},
+			{"component-name": "icons","component-label": "Icons"},
+			{"component-name": "typeface","component-label": "Typeface"}
+		]
+	},
+	{
+		"category-label" : "Effects & Interactions",
 		"component" : [
 			{"component-name": "add-class","component-label": "Add Class"},
 			{"component-name": "draggable","component-label": "Draggable"},
