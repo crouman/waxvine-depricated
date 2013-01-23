@@ -243,6 +243,14 @@ jQuery(function($) {"use strict";
 				// TODO show error
 			}else if(newLibraryName.indexOf('-clone') !== -1){
 				// TODO show error
+			}else if(newLibraryName.indexOf('\'') !== -1){
+				// TODO show error
+			}else if(newLibraryName.indexOf('"') !== -1){
+				// TODO show error
+			}else if(newLibraryName.indexOf('<') !== -1){
+				// TODO show error
+			}else if(newLibraryName.indexOf('>') !== -1){
+				// TODO show error
 			}
 			else{
 				var library;
