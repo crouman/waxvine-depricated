@@ -283,7 +283,11 @@ jQuery(function($) {"use strict";
 		},
 		cancelEdit : function(){
 			App.toggleSettingsEditControls();
-			App.loadLibraryComponents(App.$libraryName.data('previous-value'));
+			var libraryName = App.$libraryName.data('previous-value');
+			if(libraryName.indexOf('-clone') !== -1){
+				libraryName = libraryName.replace(/-clone/gi, '');
+			}
+			App.loadLibraryComponents(libraryName);
 		},
 		toggleSettingsEditControls : function(){
 			App.$libraryName.attr('contenteditable', 'false').removeClass('edit-border');
