@@ -283,9 +283,9 @@ jQuery(function($) {"use strict";
 		},
 		cancelEdit : function(){
 			App.toggleSettingsEditControls();
-			var libraryName = App.$libraryName.data('previous-value');
-			if(libraryName.indexOf('-clone') !== -1){
-				libraryName = libraryName.replace(/-clone/gi, '');
+			var libraryName = localStorage.getItem('current-library');
+			if(libraryName === null){
+				libraryName = App.$libraryName.data('previous-value');
 			}
 			App.loadLibraryComponents(libraryName);
 		},
