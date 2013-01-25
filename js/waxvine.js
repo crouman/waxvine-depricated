@@ -48,6 +48,7 @@ jQuery(function($) {"use strict";
 			this.$cloneLibrary = $('#clone-library');
 			this.$deleteLibrary = $('#delete-library');
 			this.$libraryName = $('#library-name h1');
+			this.$errorMessage = $('#error-message');
 			this.$componentCheckBox = $('.checkbox');
 			this.$editLibraryControls = $('#edit-library-controls');
 			this.$editLibrarySave = $('#library-save');
@@ -237,20 +238,20 @@ jQuery(function($) {"use strict";
 		saveLibrary : function(){
 			var previousLibraryName = App.$libraryName.data('previous-value');
 			var newLibraryName = App.$libraryName.html();
-			if(newLibraryName == ''){
-				// TODO show validation error
+			if(newLibraryName.indexOf('<br>') !== -1){// empty
+				App.showLibraryNameError('Library name can not be empty.');
 			}else if(newLibraryName === 'Library Name'){
-				// TODO show error
+				App.showLibraryNameError('Can not use "Library name" as the name of the library.');
 			}else if(newLibraryName.indexOf('-clone') !== -1){
-				// TODO show error
+				App.showLibraryNameError('Library name can not have "-clone" in the name.');
 			}else if(newLibraryName.indexOf('\'') !== -1){
-				// TODO show error
+				App.showLibraryNameError('Library name can not have an apostrophe in the name.');
 			}else if(newLibraryName.indexOf('"') !== -1){
-				// TODO show error
-			}else if(newLibraryName.indexOf('<') !== -1){
-				// TODO show error
-			}else if(newLibraryName.indexOf('>') !== -1){
-				// TODO show error
+				App.showLibraryNameError('Library name can not have quotes in the name.');
+			}else if(newLibraryName.indexOf('&lt;') !== -1){
+				App.showLibraryNameError('Library name can not have "<" in the name.');
+			}else if(newLibraryName.indexOf('&gt;') !== -1){
+				App.showLibraryNameError('Library name can not have ">" in the name.');
 			}
 			else{
 				var library;
@@ -290,10 +291,15 @@ jQuery(function($) {"use strict";
 			App.loadLibraryComponents(libraryName);
 		},
 		toggleSettingsEditControls : function(){
-			App.$libraryName.attr('contenteditable', 'false').removeClass('edit-border');
+			App.$libraryName.attr('contenteditable', 'false').removeClass('edit-border').removeClass('library-name-error');
+			App.$errorMessage.html('').hide();
 			App.$componentCheckBox.hide();
 			App.$editLibraryControls.hide();
 			App.$settingsIcon.show();
+		},
+		showLibraryNameError : function(errorMsg){
+			App.$errorMessage.html(errorMsg).show();
+			App.$libraryName.addClass('library-name-error');
 		},
 		addComponentToLibrary : function(){
 			$(this).hide();
