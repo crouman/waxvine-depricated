@@ -405,18 +405,6 @@ nav #search-options a {
 	padding-bottom: 5px;
 }
 
-#library-name #error-message{
-	display: none;
-	font-size: 13px;
-	padding: 10px;
-	color: #CC0033;
-	float: left;
-}
-
-.library-name-error{
-	border: 1px solid #CC0033 !important;
-}
-
 #library-name #settings {
 	float: right;
 	margin-right: 10px;
