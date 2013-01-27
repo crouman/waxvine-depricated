@@ -270,9 +270,9 @@ nav #navRight #libraries-dropdown{
 
 nav #navRight #libraries-dropdown ul#libraries-menu li.menu-header,nav #navRight #libraries-dropdown ul#libraries-menu li.menu-header:hover{		
 	background: transparent url(../img/drop-menu-indicator.png) right no-repeat;
-	background-position: 249px 7px;
+	background-position: 238px 7px;
 	padding: 0;
-	padding-left: 182px;
+	padding-left: 171px;
 	padding-bottom: 10px;
 	margin-right: 10px;
 	cursor: pointer;
