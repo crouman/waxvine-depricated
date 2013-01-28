@@ -396,8 +396,10 @@ nav #search-options a {
 }
 
 #library-name h1.edit-border{
+	overflow: hidden;
+	white-space: nowrap;
 	border: 1px solid #000;
-	width: 25%;
+	width: 390px;
 	background-color: #DFDFDF;
 	color: #000;
 	font-size: 1.5em;
