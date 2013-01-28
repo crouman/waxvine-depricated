@@ -75,7 +75,8 @@ jQuery(function($) {"use strict";
 			this.$editLibrarySave.on( 'click', this.saveLibrary );
 			this.$editLibraryCancel.on( 'click', this.cancelEdit );
 			this.$checked.on( 'click', this.removeComponentFromLibrary );
-			this.$unChecked.on( 'click', this.addComponentToLibrary )
+			this.$unChecked.on( 'click', this.addComponentToLibrary );
+			this.$libraryName.on( 'keypress', function(e){ return e.which != 13; });
 		},
 		createLibrariesMenu : function(){
 			var libraries = App.getUser().libraries;
