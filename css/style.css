@@ -718,13 +718,18 @@ section#content-container div#toolbar ul#tabs li {
 	cursor: pointer;
 }
 
-section#content-container div#toolbar a#add-remove {
+section#content-container div#toolbar a#add-link,
+section#content-container div#toolbar a#remove-link {
 	font-size: 0.9em;
 	float: right;
 	margin-top: 10px;
 	color:#CC0033;
 	text-decoration: none;
 	border: 0;
+}
+
+section#content-container div#toolbar a#add-link{
+	display: none;
 }
 
 section#content-container div#content {

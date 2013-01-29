@@ -55,6 +55,8 @@ jQuery(function($) {"use strict";
 			this.$editLibraryCancel = $('#library-cancel');
 			this.$checked = $('.checked');
 			this.$unChecked = $('.unchecked');
+			this.$addLink = $('#add-link');
+			this.$removeLink = $('#remove-link');
 		},
 		initPlugins : function(){
 			
@@ -74,9 +76,11 @@ jQuery(function($) {"use strict";
 			this.$deleteLibrary.on ( 'click', this.deleteLibrary );
 			this.$editLibrarySave.on( 'click', this.saveLibrary );
 			this.$editLibraryCancel.on( 'click', this.cancelEdit );
-			this.$checked.on( 'click', this.removeComponentFromLibrary );
-			this.$unChecked.on( 'click', this.addComponentToLibrary );
+			this.$checked.on( 'click', this.markRemoveFromLibrary );
+			this.$unChecked.on( 'click', this.markAddToLibrary );
 			this.$libraryName.on( 'keypress', function(e){ return e.which != 13; });
+			this.$addLink.on( 'click', this.addComponentToLibrary );
+			this.$removeLink.on( 'click', this.removeComponmentFromLibrary );
 		},
 		createLibrariesMenu : function(){
 			var libraries = App.getUser().libraries;
@@ -302,13 +306,21 @@ jQuery(function($) {"use strict";
 			App.$errorMessage.html(errorMsg).show();
 			App.$libraryName.addClass('library-name-error');
 		},
-		addComponentToLibrary : function(){
+		markAddToLibrary : function(){
 			$(this).hide();
 			$(this).next('.checked').show();
 		},
-		removeComponentFromLibrary : function(){
+		markRemoveFromLibrary : function(){
 			$(this).hide();
 			$(this).prev('.unchecked').show();
+		},
+		addComponentToLibrary : function(){
+			App.$addLink.hide();
+			App.$removeLink.show();
+		},
+		removeComponmentFromLibrary : function(){
+			App.$removeLink.hide();
+			App.$addLink.show();
 		}
 	};
 
