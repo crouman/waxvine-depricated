@@ -153,6 +153,13 @@ jQuery(function($) {"use strict";
 		// Handles click events for component
   		// Loads appropriate html page for which component is clicked on
 		loadComponentOnClick : function(){
+			if($(this).find('.unchecked').is(':visible')){
+				App.$removeLink.hide();
+				App.$addLink.show();
+			}else{
+				App.$addLink.hide();
+				App.$removeLink.show();
+			}
 			var $anchor = $(this).find('a[component]');
 			App.loadComponent($anchor.html(), $anchor.attr('component'));
 		},
@@ -309,18 +316,38 @@ jQuery(function($) {"use strict";
 		markAddToLibrary : function(){
 			$(this).hide();
 			$(this).next('.checked').show();
+			App.$addLink.hide();
+			App.$removeLink.show();
 		},
 		markRemoveFromLibrary : function(){
 			$(this).hide();
 			$(this).prev('.unchecked').show();
+			App.$removeLink.hide();
+			App.$addLink.show();
 		},
 		addComponentToLibrary : function(){
 			App.$addLink.hide();
 			App.$removeLink.show();
+			if(App.$libraryName.hasClass('edit-border')){// In edit view
+				var componentName = App.$componentName.html();
+				var $component = $('.sub-menu li:contains("'+componentName+'")').first();
+				$component.find('.unchecked').trigger('click');
+			}else{// Not in edit view
+				
+			}
 		},
 		removeComponmentFromLibrary : function(){
 			App.$removeLink.hide();
 			App.$addLink.show();
+			if(App.$libraryName.hasClass('edit-border')){// In edit view
+				var componentName = App.$componentName.html();
+				var $component = $('.sub-menu li:contains("'+componentName+'")').first();
+				$component.find('.checked').trigger('click');
+			}else{// Not in edit view
+				
+			}
+			
+			var library = jQuery.parseJSON(localStorage.getItem(App.$libraryName.html()));
 		}
 	};
 
