@@ -308,6 +308,8 @@ jQuery(function($) {"use strict";
 			App.$componentCheckBox.hide();
 			App.$editLibraryControls.hide();
 			App.$settingsIcon.show();
+			App.$addLink.hide();
+			App.$removeLink.show();
 		},
 		showLibraryNameError : function(errorMsg){
 			App.$errorMessage.html(errorMsg).show();
