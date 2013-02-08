@@ -21,9 +21,9 @@ jQuery(function($) {"use strict";
 			localStorage.setItem('Library Name','{"name":"Library Name","components":'+JSON.stringify(ALL_COMPONENTS)+'}');
 			this.$libraryName.data('previous-value', 'Library Name');
 			if(localStorage.getItem('current-library') !== null)
-				this.loadLibraryComponents(localStorage.getItem('current-library'));
+				this.loadLibraryComponents(localStorage.getItem('current-library'), true);
 			else
-				this.loadLibraryComponents(this.getUser().libraries[0]);
+				this.loadLibraryComponents(this.getUser().libraries[0], true);
 		},
 		cacheElements : function() {			
 			this.$category = $('.category');
@@ -95,11 +95,11 @@ jQuery(function($) {"use strict";
 		},
 		loadLibraryOnClick : function(){
 			localStorage.setItem('current-library', $(this).attr('library'));
-			App.loadLibraryComponents($(this).attr('library'));
+			App.loadLibraryComponents($(this).attr('library'), true);
 			App.$librariesDropDown.hide();
 		},
 		createNewLibrary : function(){
-			App.loadLibraryComponents('Library Name');
+			App.loadLibraryComponents('Library Name', true);
 			App.editLibrary();
 		},
 		// Creates component list using Handlebar template
@@ -130,10 +130,9 @@ jQuery(function($) {"use strict";
 		
 			return jQuery.parseJSON(localStorage.user);
 		},
-		loadLibraryComponents : function(library){
-			//localStorage.library = '{"name":"Library Name","users":["some user"],"components":["auto-complete","hint-text"]}';
+		loadLibraryComponents : function(libraryName, goToFirstComponent){
 			var user = App.getUser();
-			var library = jQuery.parseJSON(localStorage.getItem(library));
+			var library = jQuery.parseJSON(localStorage.getItem(libraryName));
 			App.$category.hide();
 			App.$component.hide();
 			App.$libraryName.html(library.name);
@@ -147,31 +146,44 @@ jQuery(function($) {"use strict";
 				$checkbox.find('.unchecked').hide();
 				$checkbox.parent().parent().prev('.category').show();
 			}
-			var firstComponent = App.$component.first();
-			App.loadComponent(firstComponent.html(),firstComponent.attr('component'));
+			if(goToFirstComponent){
+				var $firstComponent = $('a[component='+library.components[0]+']');
+				App.loadComponent($firstComponent.html(),$firstComponent.attr('component'));
+			}
+			if(libraryName === 'Library Name'){
+				App.$removeLink.hide();
+				App.$addLink.hide();
+			}else if(goToFirstComponent){
+				App.$removeLink.show();
+				App.$addLink.hide();
+			}
 		},
 		// Handles click events for component
   		// Loads appropriate html page for which component is clicked on
 		loadComponentOnClick : function(){
-			if($(this).find('.unchecked').is(':visible')){
-				App.$removeLink.hide();
-				App.$addLink.show();
-			}else{
-				App.$addLink.hide();
-				App.$removeLink.show();
+			if(App.$libraryName.html() !== 'Library Name'){
+				if($(this).find('.unchecked').is(':visible')){
+					App.$removeLink.hide();
+					App.$addLink.show();
+				}else{
+					App.$addLink.hide();
+					App.$removeLink.show();
+				}
 			}
 			var $anchor = $(this).find('a[component]');
 			App.loadComponent($anchor.html(), $anchor.attr('component'));
 		},
 		loadComponent : function(name, component){
 			App.$componentName.html(name);
+			App.$componentName.data('component', component);
 			App.$content.load('components/'+component+'.html', function(response, status, xhr) {
 				if (status == "error") {
 			    	App.$content.html('Uh-oh...There was an issue with retrieving contents for this component.  Please email <a href="mailto:support@waxvine.com">support@waxvine.com</a>, state which component it is and tell them get their act together!');
 			  		console.log('There was an error fetching the contents for that component.  Are you sure the component content markup exist and the component-name matches file name?')
 			  	}
-			  	//$(response).find('article[tab=overview]').show();
 			});
+			App.$tabs.removeClass('selected');
+			App.$overviewTab.addClass('selected');
 		},
 		// Handles click events for tabs
 		// hide/show the appropriate tab contents
@@ -214,6 +226,8 @@ jQuery(function($) {"use strict";
 			App.$settingsIcon.hide();
 			App.$settingsDropDown.hide();
 			App.$editLibraryControls.show();
+			App.$addLink.hide();
+			App.$removeLink.show();
 		},
 		cloneLibrary : function(){
 			App.$libraryName.html(App.$libraryName.html()+'-clone');
@@ -235,7 +249,7 @@ jQuery(function($) {"use strict";
 					var $nextLibrary = $('li[library]').first();
 					if($nextLibrary.length === 0){
 						localStorage.setItem('current-library', 'Library Name');
-						App.loadLibraryComponents('Library Name');
+						App.loadLibraryComponents('Library Name', true);
 					}else{
 						localStorage.setItem('current-library', $nextLibrary.attr('library'));
 						$nextLibrary.trigger('click');
@@ -291,7 +305,7 @@ jQuery(function($) {"use strict";
 				App.createLibrariesMenu();
 				App.toggleSettingsEditControls();
 				localStorage.setItem('current-library', newLibraryName);
-				App.loadLibraryComponents(newLibraryName);
+				App.loadLibraryComponents(newLibraryName, true);
 			}
 		},
 		cancelEdit : function(){
@@ -300,7 +314,7 @@ jQuery(function($) {"use strict";
 			if(libraryName === null){
 				libraryName = App.$libraryName.data('previous-value');
 			}
-			App.loadLibraryComponents(libraryName);
+			App.loadLibraryComponents(libraryName, true);
 		},
 		toggleSettingsEditControls : function(){
 			App.$libraryName.attr('contenteditable', 'false').removeClass('edit-border').removeClass('library-name-error');
@@ -335,21 +349,26 @@ jQuery(function($) {"use strict";
 				var $component = $('.sub-menu li:contains("'+componentName+'")').first();
 				$component.find('.unchecked').trigger('click');
 			}else{// Not in edit view
-				
+				var libraryName = App.$libraryName.html();
+				var library = jQuery.parseJSON(localStorage.getItem(libraryName));
+				library.components.push(App.$componentName.data('component'));
+				localStorage.setItem(libraryName, JSON.stringify(library));
+				App.loadLibraryComponents(libraryName, false);
 			}
 		},
 		removeComponmentFromLibrary : function(){
 			App.$removeLink.hide();
 			App.$addLink.show();
 			if(App.$libraryName.hasClass('edit-border')){// In edit view
-				var componentName = App.$componentName.html();
-				var $component = $('.sub-menu li:contains("'+componentName+'")').first();
+				var $component = $('.sub-menu li:contains("'+App.$componentName.html()+'")').first();
 				$component.find('.checked').trigger('click');
 			}else{// Not in edit view
-				
+				var libraryName = App.$libraryName.html();
+				var library = jQuery.parseJSON(localStorage.getItem(libraryName));
+				library.components.splice(library.components.indexOf(App.$componentName.data('component')), 1);
+				localStorage.setItem(libraryName, JSON.stringify(library));
+				App.loadLibraryComponents(libraryName, false);
 			}
-			
-			var library = jQuery.parseJSON(localStorage.getItem(App.$libraryName.html()));
 		}
 	};
 
