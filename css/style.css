@@ -732,7 +732,7 @@ section#content-container div#toolbar div.processing{
 	width: 27px;
 	height: 17px;
 	float: right;
-	margin: 9px 3px 0 0;
+	margin: 9px -10px 0 0;
 }
 
 section#content-container div#toolbar a#add-link,
@@ -743,10 +743,23 @@ section#content-container div#toolbar a#remove-link {
 	color:#CC0033;
 	text-decoration: none;
 	border: 0;
+	padding-left: 15px;
 }
 
 section#content-container div#toolbar a#add-link{
 	display: none;
+	color: #4853AC;
+}
+
+section#content-container div#toolbar a.add-icon{
+	background-image: url(../img/add-icon.gif);
+	background-repeat: no-repeat;
+}
+
+
+section#content-container div#toolbar a.remove-icon{
+	background-image: url(../img/remove-icon.gif);
+	background-repeat: no-repeat;
 }
 
 section#content-container div#content {

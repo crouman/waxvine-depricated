@@ -348,6 +348,7 @@ jQuery(function($) {"use strict";
 		},
 		addComponentToLibrary : function(){
 			App.$addLink.html('Adding to library');
+			App.$addLink.removeClass('add-icon');
 			App.$removeAddProcessing.show();
 			setTimeout(function(){
 				App.$addLink.hide();
@@ -362,13 +363,15 @@ jQuery(function($) {"use strict";
 					localStorage.setItem(libraryName, JSON.stringify(library));
 					App.loadLibraryComponents(libraryName, false);
 				}
-				App.$addLink.html('+ Add to library');
+				App.$addLink.html('Add to library');
+				App.$addLink.addClass('add-icon');
 				App.$removeAddProcessing.hide();
 				App.$removeLink.show();
 			}, 2000);
 		},
 		removeComponmentFromLibrary : function(){
 			App.$removeLink.html('Removing from library');
+			App.$removeLink.removeClass('remove-icon');
 			App.$removeAddProcessing.show();			
 			setTimeout(function(){
 				App.$removeLink.hide();
@@ -382,7 +385,8 @@ jQuery(function($) {"use strict";
 					localStorage.setItem(libraryName, JSON.stringify(library));
 					App.loadLibraryComponents(libraryName, false);
 				}
-				App.$removeLink.html('- Remove from library');
+				App.$removeLink.html('Remove from library');
+				App.$removeLink.addClass('remove-icon');
 				App.$removeAddProcessing.hide();
 				App.$addLink.show();
 			}, 2000);
