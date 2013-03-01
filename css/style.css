@@ -584,8 +584,9 @@ aside#left-nav ul li ul.sub-menu li {
 	cursor: pointer;
 }
 
-aside#left-nav ul li ul.sub-menu li.active {
+aside#left-nav ul li ul.sub-menu li.active, aside#left-nav ul li ul.sub-menu li.active:hover {
 	background-color: #6B97BF;
+	cursor:default;
 }
 
 aside#left-nav ul li ul.sub-menu li.active a {
