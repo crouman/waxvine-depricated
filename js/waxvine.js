@@ -55,6 +55,7 @@ jQuery(function($) {"use strict";
 			this.$editLibraryCancel = $('#library-cancel');
 			this.$checked = $('.checked');
 			this.$unChecked = $('.unchecked');
+			this.$removeAddProcessing = $('#content-container #toolbar .processing');
 			this.$addLink = $('#add-link');
 			this.$removeLink = $('#remove-link');
 		},
@@ -148,6 +149,8 @@ jQuery(function($) {"use strict";
 			}
 			if(goToFirstComponent){
 				var $firstComponent = $('a[component='+library.components[0]+']');
+				App.$componentWrapper.removeClass('active');
+				$firstComponent.parent().addClass('active');
 				App.loadComponent($firstComponent.html(),$firstComponent.attr('component'));
 			}
 			if(libraryName === 'Library Name'){
@@ -344,33 +347,45 @@ jQuery(function($) {"use strict";
 			App.$addLink.show();
 		},
 		addComponentToLibrary : function(){
-			App.$addLink.hide();
-			App.$removeLink.show();
-			if(App.$libraryName.hasClass('edit-border')){// In edit view
-				var componentName = App.$componentName.html();
-				var $component = $('.sub-menu li:contains("'+componentName+'")').first();
-				$component.find('.unchecked').trigger('click');
-			}else{// Not in edit view
-				var libraryName = App.$libraryName.html();
-				var library = jQuery.parseJSON(localStorage.getItem(libraryName));
-				library.components.push(App.$componentName.data('component'));
-				localStorage.setItem(libraryName, JSON.stringify(library));
-				App.loadLibraryComponents(libraryName, false);
-			}
+			App.$addLink.html('Adding to library');
+			App.$removeAddProcessing.show();
+			setTimeout(function(){
+				App.$addLink.hide();
+				if(App.$libraryName.hasClass('edit-border')){// In edit view
+					var componentName = App.$componentName.html();
+					var $component = $('.sub-menu li:contains("'+componentName+'")').first();
+					$component.find('.unchecked').trigger('click');
+				}else{// Not in edit view
+					var libraryName = App.$libraryName.html();
+					var library = jQuery.parseJSON(localStorage.getItem(libraryName));
+					library.components.push(App.$componentName.data('component'));
+					localStorage.setItem(libraryName, JSON.stringify(library));
+					App.loadLibraryComponents(libraryName, false);
+				}
+				App.$addLink.html('+ Add to library');
+				App.$removeAddProcessing.hide();
+				App.$removeLink.show();
+			}, 2000);
 		},
 		removeComponmentFromLibrary : function(){
-			App.$removeLink.hide();
-			App.$addLink.show();
-			if(App.$libraryName.hasClass('edit-border')){// In edit view
-				var $component = $('.sub-menu li:contains("'+App.$componentName.html()+'")').first();
-				$component.find('.checked').trigger('click');
-			}else{// Not in edit view
-				var libraryName = App.$libraryName.html();
-				var library = jQuery.parseJSON(localStorage.getItem(libraryName));
-				library.components.splice(library.components.indexOf(App.$componentName.data('component')), 1);
-				localStorage.setItem(libraryName, JSON.stringify(library));
-				App.loadLibraryComponents(libraryName, false);
-			}
+			App.$removeLink.html('Removing from library');
+			App.$removeAddProcessing.show();			
+			setTimeout(function(){
+				App.$removeLink.hide();
+				if(App.$libraryName.hasClass('edit-border')){// In edit view
+					var $component = $('.sub-menu li:contains("'+App.$componentName.html()+'")').first();
+					$component.find('.checked').trigger('click');
+				}else{// Not in edit view
+					var libraryName = App.$libraryName.html();
+					var library = jQuery.parseJSON(localStorage.getItem(libraryName));
+					library.components.splice(library.components.indexOf(App.$componentName.data('component')), 1);
+					localStorage.setItem(libraryName, JSON.stringify(library));
+					App.loadLibraryComponents(libraryName, false);
+				}
+				App.$removeLink.html('- Remove from library');
+				App.$removeAddProcessing.hide();
+				App.$addLink.show();
+			}, 2000);
 		}
 	};
 

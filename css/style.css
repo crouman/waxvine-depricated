@@ -726,6 +726,15 @@ section#content-container div#toolbar ul#tabs li {
 	cursor: pointer;
 }
 
+section#content-container div#toolbar div.processing{
+	display: none;
+	background-image: url(../img/processing.gif);
+	width: 27px;
+	height: 17px;
+	float: right;
+	margin: 9px 3px 0 0;
+}
+
 section#content-container div#toolbar a#add-link,
 section#content-container div#toolbar a#remove-link {
 	font-size: 0.9em;
