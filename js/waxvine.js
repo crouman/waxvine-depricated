@@ -170,6 +170,8 @@ jQuery(function($) {"use strict";
 					App.$removeLink.show();
 				}
 			}
+			App.$componentWrapper.removeClass('active');
+			$(this).addClass('active');
 			var $anchor = $(this).find('a[component]');
 			App.loadComponent($anchor.html(), $anchor.attr('component'));
 		},

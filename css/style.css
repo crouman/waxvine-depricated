@@ -584,6 +584,14 @@ aside#left-nav ul li ul.sub-menu li {
 	cursor: pointer;
 }
 
+aside#left-nav ul li ul.sub-menu li.active {
+	background-color: #6B97BF;
+}
+
+aside#left-nav ul li ul.sub-menu li.active a {
+	color: #ffffff;
+}
+
 aside#left-nav ul ul.sub-menu li a {
 	background-color:transparent;
 	font-size: 0.9em;
