@@ -67,23 +67,5 @@
 			{"component-name": "icons","component-label": "Icons"},
 			{"component-name": "typeface","component-label": "Typeface"}
 		]
-	},
-	{
-		"category-label" : "Effects & Interactions",
-		"component" : [
-			{"component-name": "add-class","component-label": "Add Class"},
-			{"component-name": "draggable","component-label": "Draggable"},
-			{"component-name": "droppable","component-label": "Droppable"},
-			{"component-name": "easing","component-label": "Easing"},
-			{"component-name": "effect","component-label": "Effect"},
-			{"component-name": "hide","component-label": "Hide"},
-			{"component-name": "remove-class","component-label": "Remove Class"},
-			{"component-name": "resizable","component-label": "Resizable"},
-			{"component-name": "selectable","component-label": "Selectable"},
-			{"component-name": "switch-class","component-label": "Switch Class"},
-			{"component-name": "show","component-label": "Show"},
-			{"component-name": "toggle","component-label": "Toggle"},
-			{"component-name": "toggle-class","component-label": "Toggle Class"}
-		]
 	}
 ]}
