@@ -4,7 +4,7 @@
 		"component" : [
 			{"component-name": "auto-complete","component-label": "Auto-complete", "default-component": true},
 			{"component-name": "button","component-label": "Button"},
-			{"component-name": "combobox","component-label": "Combo-box"},
+			{"component-name": "combo-box","component-label": "Combo-box"},
 			{"component-name": "contextmenu","component-label": "Context-menu"},
 			{"component-name": "hint-text","component-label": "Hint Text"},
 			{"component-name": "keyboard-shortcuts","component-label": "Keyboard Shortcuts"},
