@@ -60,7 +60,6 @@ jQuery(function($) {"use strict";
 			this.$removeLink = $('#remove-link');
 		},
 		initPlugins : function(){
-			
 		},
 		bindEvents : function() {
 			this.$componentWrapper.on( 'click', this.loadComponentOnClick );
@@ -184,7 +183,26 @@ jQuery(function($) {"use strict";
 			App.$content.load('components/'+component+'.html', function(response, status, xhr) {
 				if (status == "error") {
 			    	App.$content.html('Uh-oh...There was an issue with retrieving contents for this component.  Please email <a href="mailto:support@waxvine.com">support@waxvine.com</a>, state which component it is and tell them get their act together!');
-			  		console.log('There was an error fetching the contents for that component.  Are you sure the component content markup exist and the component-name matches file name?')
+			  		console.log('There was an error fetching the contents for that component.  Are you sure the component content markup exist and the component-name matches file name?');
+			  	}else{
+			  		$.get('solutions/'+component+'.html', function(response, status, xhr) {
+			  			if(status != "error") {
+			  				$('pre.html-source-code').text(response);
+			  				$('pre.html-source-code').snippet('html',{style:"ide-eclipse", collapse:true});
+			  			}
+			  		}).fail(function(){
+			  			$('pre.html-source-code').after('Uh-oh...There was an issue with retrieving html source code for this component.  Please email <a href="mailto:support@waxvine.com">support@waxvine.com</a>, state which component it is and tell them get their act together!');
+			  			console.log('There was an error fetching the html source code for that component.  Are you sure the component source code exist and the component-name matches file name?');
+			  		});
+			  		$.get('solutions/css/'+component+'.css', function(response, status, xhr) {
+			  			if(status != "error") {
+			  				$('pre.css-source-code').text(response);
+			  				$('pre.css-source-code').snippet('css',{style:"ide-eclipse", collapse:true});
+			  			}
+			  		}).fail(function(){
+			  			$('pre.css-source-code').after('Uh-oh...There was an issue with retrieving css source code for this component.  Please email <a href="mailto:support@waxvine.com">support@waxvine.com</a>, state which component it is and tell them get their act together!');
+			  			console.log('There was an error fetching the css source code for that component.  Are you sure the component source code exist and the component-name matches file name?');
+			  		});
 			  	}
 			});
 			App.$tabs.removeClass('selected');
