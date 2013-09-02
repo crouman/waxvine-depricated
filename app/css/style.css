@@ -1,30 +1,596 @@
-/* app css stylesheet */
+@charset "utf-8";
+/* defaults */
 
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+@font-face {
+  font-family: 'Droid Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Droid Sans'), local('DroidSans'), url(../fonts/s-BiyweUPV0v-yRb-cjciL3hpw3pgy2gAi-Ip7WPMi0.woff) format('woff');
 }
 
-.menu:before {
-  content: "[";
+body, h1{
+    font-family: 'Droid Sans', sans-serif;
+	margin:0;
+	padding:0;
+	background:url(../img/body-bg.png);
 }
 
-.menu:after {
-  content: "]";
+h1{
+	background:transparent;
 }
 
-.menu > li {
-  display: inline;
+/*header*/
+/*default version of the header is dark*/
+header, header.light{
+	border:1px solid #D8D8D8;
+	/*default for reasonable browsers*/
+	background:linear-gradient(rgb(78, 82, 93) 0%, rgb(54, 56, 64) 100%);
+	/*IE 10+*/
+	background:ms-linear-gradient(rgb(78, 82, 93) 0%, rgb(54, 56, 64) 100%);
+	/*IE 9 and earlier*/
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#4E525D, endColorstr=#363840)";	
+	/* Safari 5.1+, Mobile Safari, Chrome 10+ */
+  background-image: -webkit-linear-gradient(top, #4E525D, #363840);
+	color:#FFF;
+	margin:5px;
+	padding:5px 5px 7px 5px;
+	height:32px;
 }
 
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
+/*light version of header*/
+header.light{	
+	/*default for reasonable browsers*/
+	background:linear-gradient(rgb(255, 255, 255) 0%, rgb(245, 245, 245) 100%);
+	/*IE 10+*/
+	background:ms-linear-gradient(rgb(255, 255, 255) 0%, rgb(245, 245, 245) 100%);
+	/*IE 9 and earlier*/
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#FFFFFF, endColorstr=#F5F5F5)";	
+	/* Safari 5.1+, Mobile Safari, Chrome 10+ */
+  background-image: -webkit-linear-gradient(top, #FFFFFF, #F5F5F5);
+	color:#333;
 }
 
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
+
+/*settings menu—parent and child lists*/
+/*parent and child lists*/
+header #library-name{
+	float:left;
+	padding: 0 3px;
+}
+
+header #library-name h1, header #library-name h1:hover, header.light #library-name h1, header.light #library-name h1:hover{
+	background: url(../img/menu-indicator-light.png) left no-repeat;
+	background-position-x: 7px;
+	border-radius: 0px;
+	cursor: pointer;
+	display: inline;
+	float: left;
+	font-size: 1.5em;
+	font-weight: normal;
+	padding: 3px 7px;
+	text-indent: 20px;
+	z-index: 100;
+}
+
+/*dark icon for light background*/
+header.light #library-name h1, header.light #library-name h1:hover{
+	background: url(../img/menu-indicator-dark.png) left no-repeat;
+	background-position-x: 7px;
+}
+
+header #user{
+	/*display:inline-block;*/
+	float:right;
+	padding-right:5px;
+	cursor:pointer;
+}
+
+header #user h2{
+	background:url(../img/user-image.png) right no-repeat;
+	font-size:1.0em;
+	font-weight: normal;
+	line-height:2.2em;
+	margin:0;
+	padding:0px 35px 0px 5px;
+}
+
+header #user-name{
+	padding-right:5px;
+	float:right;
+}
+
+header #library-name ul#settings-menu, header #user ul#user-menu{
+	position:relative;
+	top:3px;
+	z-index:100;
+	background-color:#FFF;	
+	border:1px solid #D8D8D8;
+	float:left;
+	clear:both;
+	color:#444;
+	margin:0;
+	padding:6px 0;
+	text-transform:capitalize;
+	display:none;
+	width:225px;
+}
+
+header #library-name ul#settings-menu{
+	left:0px;
+}
+
+header #user ul#user-menu{
+	right:0px;
+}
+
+/*specifying item style for parent and child lists*/
+ul.menu li:hover{
+	background-color:#EAEAEA;
+	border:1px solid #D8D8D8;
+	border-left:0;
+	border-right:0;
+	margin:-1px 0;
+	color:#666;
+}
+
+ul.menu li, ul.menu li:hover{
+	background-repeat:no-repeat;
+	background-position:12px 4px;
+	cursor:pointer;
+	font-size:0.9em;
+	list-style-type:none;
+	line-height:1.7em;
+	padding:0 10px 0 25px;
+	text-indent:10px;
+}
+
+ul.menu li.child, ul.menu li.child:hover{
+	text-indent:10px;
+}
+
+ul.menu li.child:hover{
+	margin:-1px 0px;
+	padding-right:6px;
+	background-color:#EAEAEA;
+	border:1px solid #D8D8D8;
+	border-left:0;
+	border-right:0;
+	text-indent:10px;
+}
+
+ul.menu li.default-indicator{
+	background-position:95% 50% !important;
+}
+
+ul.menu li.divider{
+	border-bottom:1px solid #d8d8d8;
+	padding-top:4px;
+	margin-bottom:7px;
+}
+
+ul.menu li.divider:hover{
+	background-color:transparent;
+	border-top-color:transparent;
+	cursor:default;
+}
+
+/*navigation*/
+nav{
+	border:1px solid #D8D8D8;
+	border-top:none;
+	background:#FAFAFA;
+	/*background:linear-gradient(rgb(255, 255, 255) 0%, rgb(245, 245, 245) 100%);*/	
+	/*background-color:#F0F0F0;*/
+	color:#444;
+	padding:0;
+	position:absolute;
+	width:255px;
+	overflow-y:auto;
+	overflow-x:none;
+	top:77px;
+	left:5px;
+	bottom:5px;
+	text-transform:capitalize;
+}
+
+#search, #search.active{
+	position:absolute;
+	top:55px;
+	left:5px;
+	width:255px;
+	border:1px solid #D8D8D8;
+	background: 234px 5px #FFF url(../img/search-inactive.png) no-repeat;
+	cursor:pointer;
+	z-index:10;
+}
+
+#search.active{
+	background: 234px 5px #FFF url(../img/search-active.png) no-repeat;
+}
+
+#search:hover{
+	background: 234px 5px #FFF url(../img/search-hover.png) no-repeat;
+}
+
+#search input{
+	background:none;
+	border:0;
+	outline:none;
+	width:225px;
+	margin-left:3px;	
+	font-family: 'Droid Sans', sans-serif;
+}
+
+.highlight{
+	background-color:#FFC !important;
+}
+
+/*component list*/
+nav dl dt{
+	font-size:1.2em;
+}
+
+nav dl{
+	margin:0;
+	padding:0;
+	background:#FFF;
+	color:#444;
+}
+
+nav dt{
+	padding:4px 0 4px 5px;
+	background: linear-gradient(to bottom, #ffffff 0%,#f5f5f5 100%);
+	border:1px solid #D8D8D8;
+	border-left:0;
+	border-right:0;
+}
+
+nav dl dd{
+	font-size:0.9em;
+	margin:0;
+	padding:2px 10px;
+	line-height:1.5em;
+	cursor:pointer;
+}
+
+/*nav dd.last-child{
+	border-bottom:1px solid #333;
+}*/
+
+nav dl dd.selected, nav dl dd.selected:hover{
+	/*font-weight:bold;*/
+	background-color:#BEE4F3;
+	/*color:#000;*/
+}
+
+nav dl dd:hover {	
+	background-color:#EAEAEA;
+	border:1px solid #D8D8D8;
+	border-left:0;
+	border-right:0;
+	margin:-1px 0;
+	color:#666;
+}
+
+/*parent container*/
+#parent{
+	position:absolute;
+	top:55px;
+	left:270px;
+	right:5px;
+	bottom:0px;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+}
+
+#parent #component-header{	
+	margin-top:5px;
+	height:25px;
+}
+
+#parent #component-header h1{
+	font-size:1.4em;
+	font-weight:normal;
+	text-transform:capitalize;
+	margin:0;	
+	float:left;
+}
+
+#parent #component-header #add-remove{
+	float:right;
+	font-size:0.7em;
+	margin-top:10px;
+	margin-right:5px;
+	cursor:pointer;
+}
+
+#parent #component-header #add-remove.remove{
+	color:#900;
+}
+
+/*tabs*/
+#tabs{
+	position:absolute;
+	top:35px;
+	right:0px;
+	bottom:5px;
+	left:0;
+	font-family:'Droid Sans', sans-serif;
+}
+
+/*jQueryUI class override*/
+#tabs .ui-tabs-active a{
+	outline:none;
+}
+
+#tabs ul li{
+	font-size:0.7em;
+	text-transform:uppercase;
+}
+
+#tabs div section.sec-title{
+	border-bottom:1px solid #D8D8D8;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+
+#tabs div section ul.sec-options{
+	float:right;
+}
+
+#tabs div section ul.sec-options li{
+	float:left;
+}
+
+#tabs div h2{
+	font-weight:normal;
+	font-size:1.1em;
+	display:inline;
+}
+
+#tabs div h2.sec-title-toolbar{
+	border-bottom:0;
+	display:block;
+	margin-bottom:5px;
+}
+
+#tabs div h3{
+	font-weight:normal;
+	font-size:0.9em;
+}
+
+#tabs div h2 span.export{
+	font-size:0.6em;
+	float:right;
+}
+
+#tabs div ul{
+	list-style-type:none;
+	/*list-style-position:inside;*/
+	margin:0;
+	margin-bottom:20px;
+	margin-left:10px;
+	padding:0;
+}
+
+#tabs div ul li{
+	line-height:1.8em;
+	text-transform:none;
+}
+
+/*forcing alignment of the label to the input (i.e. checkbox)*/
+#tabs div ul li label{
+	display: block;
+	padding-left: 15px;
+	text-indent: -15px;
+}
+
+/*forcing alignment of the label to the input (i.e. checkbox)*/
+#tabs div ul li input{
+	width: 21px;
+	padding: 0;
+	margin: 0;
+	vertical-align: bottom;
+	position: relative;
+	top: -5px;
+}
+
+#tabs div p{
+	font-weight:normal;
+	font-size:0.8em;
+}
+
+/*enforcing scrolling within the panel so that tab labels do no scroll out of view*/
+#tabs .ui-tabs-panel{
+	padding:10px 15px 0 15px;
+	position: absolute;
+	overflow-y: auto;
+	top: 38px;
+	bottom: 0;
+	right: 4px;
+	left: 0;
+}
+
+/*fixing odd bug with hightcharts playing nicely with jQuery tabs*/
+#tabs .ui-tabs-panel[aria-expanded="false"]{
+	position: absolute;
+	top: -9999em;
+}
+
+/*toolbar*/
+.toolbar{
+	background: linear-gradient(to bottom, #ffffff 0%,#f5f5f5 100%);
+	border:1px solid #D8D8D8;
+	font-size:1.0em;
+	height:25px;
+	margin-bottom:20px;
+	/*padding:4px 0 4px 5px;*/
+}
+
+.toolbar ul li, ul.sec-options li{
+	float:left;
+	padding:0 5px 0 0;
+	line-height:1.7em !important;
+}
+
+.toolbar ul{
+	margin:0 !important;
+	padding:0 !important;
+}
+
+.toolbar ul.right{
+	float:right;
+}
+
+/*toolbar and section icons*/
+a.icon{
+	background-position:center;
+	background-repeat:no-repeat;
+	color:transparent;
+	float:left;
+	height:21px;
+	margin:2px 0 0 5px;
+	padding:0 1px;
+	width:20px;
+}
+
+a.icon:hover{
+	background-color:#EEE;
+	border:1px solid #D8D8D8;
+	height:19px;
+	width:18px;
+}
+
+a.icon:active{
+	height:20px;
+}
+
+a.icon label{
+	color:transparent;
+	cursor:pointer;
+	display:none !important;
+	margin-left:-10000px;
+}
+
+a.disabled, a.disabled:hover{
+	background-color:transparent;
+	border-color:transparent;
+	cursor:default;
+	opacity:0.5;
+}
+
+li.item-separator{
+	color:#666;
+	font-size:0.8em !important;
+	margin:0;
+	margin-top:1px;
+	padding:0 !important;
+}
+
+.toolbar li.item-separator{
+	margin-top:-1px;
+}
+
+/*icons*/
+.export{
+	background-image:url(../img/export.png);
+}
+
+.open{
+	background-image:url(../img/open.png);
+}
+
+.save{
+	background-image:url(../img/save.png);
+}
+
+.trend{	
+	background-image:url(../img/trend.png);
+}
+
+.settings{
+	background-image:url(../img/settings.png);
+}
+
+.edit{
+	background-image:url(../img/edit.png);
+}
+
+.revert{
+	background-image:url(../img/revert.png);
+}
+
+.compare{
+	background-image:url(../img/compare.png);
+}
+
+.help{
+	background-image:url(../img/help.png);
+}
+
+.dashboard{
+	background-image:url(../img/dashboard.png);
+}
+
+.clone{
+	background-image:url(../img/clone.png);	
+}
+
+.delete{
+	background-image:url(../img/delete.png);
+}
+
+.default-indicator{
+	background-image:url(../img/default-indicator.png);
+}
+
+.default{
+	background-image:url(../img/default.png);
+}
+
+.help{
+	background-image:url(../img/help.png);
+}
+
+.style-guide{
+	background-image:url(../img/styleguide.png);
+}
+
+.create{
+	background-image:url(../img/create.png);
+}
+
+.all-libs{
+	background-image:url(../img/all-libs.png);
+}
+
+.users{
+	background-image:url(../img/users.png);
+}
+
+.notification{
+	background-image:url(../img/notification.png);
+}
+
+.sign-out{
+	background-image:url(../img/sign-out.png);
+}
+
+/*toolbar button*/
+.toolbar a.toolbar-btn{		
+	color: #fff;	
+	background:linear-gradient(rgb(78, 82, 93) 0%, rgb(54, 56, 64) 100%);
+	border: 1px solid #ccc;
+	border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+	border-radius:3px;
+	padding: 0 10px;
+	-webkit-border-radius: 3px;
+	display:inline-block;
+	line-height:20px;
+	text-align:center;
+	vertical-align:middle;
+	cursor:pointer;
+	text-decoration:none;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
 }
