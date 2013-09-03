@@ -15,9 +15,24 @@ angular.module('waxvine.directives', []).
             restrict: 'A',
             // responsible for registering DOM listeners as well as updating the DOM
             link: function(scope, element, attrs) {
+                $("#loading").show();
                 $(element).tabs();
+                setTimeout(function() { // remove this before going live(only for demonstration purposes)
+                    $(element).show();
+                    $("#loading").hide();
+                }, 3000);
             }
         };
+  }]).
+  directive('progressIndicator', [function(){
+        return {
+            // Restrict it to be an attribute in this case
+            restrict: 'A',
+            // responsible for registering DOM listeners as well as updating the DOM
+            link: function(scope, element, attrs) {
+                // TODO Work on this.  Use above tabs directive example.  Find a way pass in events to trigger the indicator.
+            }
+        };  
   }]).
   directive('dropDown', [function() {
         return {

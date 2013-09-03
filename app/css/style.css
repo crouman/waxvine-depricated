@@ -311,12 +311,34 @@ nav dl dd:hover {
 
 /*tabs*/
 #tabs{
+    display: none;
 	position:absolute;
 	top:35px;
 	right:0px;
 	bottom:5px;
 	left:0;
 	font-family:'Droid Sans', sans-serif;
+}
+
+
+#loading-wrapper{
+    border: 1px solid #aaaaaa;
+    background: #ffffff url(../../img/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x;
+    top: 35px;
+    right: 0px;
+    left: 0px;
+    bottom: 5px;
+    position:absolute;
+}
+
+#loading{
+    background-image: url(../img/loading.gif);
+    width: 128px;
+    height: 128px;
+    position: absolute;
+    top: 250px;
+    left: 500px;
+    display: none;
 }
 
 /*jQueryUI class override*/
