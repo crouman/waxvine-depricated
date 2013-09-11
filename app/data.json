@@ -1,0 +1,38 @@
+{
+    "users":{
+        "justin_at_waxvine_dot_com":{
+            "id": "justin@waxvine.com",
+            "name": "Justin Skinner",
+            "email": "justin@waxvine.com",
+            "settings": {},
+            "libraries":{
+                "my_library":{
+                    "name": "My Library",
+                    "users": [
+                        "sdjustin@gmail.com","crouman@gmail.com"
+                    ],
+                    "categories":{
+                        "user_input":{
+                            "name": "User Input",
+                            "components":{
+                                "auto-complete":{
+                                    "name": "Auto-Complete",
+                                    "tabs":
+                                    {
+                                       "name": "Overview",
+                                       "sections":
+                                        {
+                                            "heading": "Description",
+                                            "orininalContent": "",
+                                            "content": ""
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

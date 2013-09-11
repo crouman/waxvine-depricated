@@ -2,9 +2,17 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('waxvine', ['waxvine.filters', 'waxvine.services', 'waxvine.directives', 'waxvine.controllers']).
-  config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/view1', {templateUrl: 'partials/partial1.html', controller: 'MyCtrl1'});
-    $routeProvider.when('/view2', {templateUrl: 'partials/partial2.html', controller: 'MyCtrl2'});
-    $routeProvider.otherwise({redirectTo: '/view1'});
-  }]);
+angular.module('waxvine', ['firebase', 'waxvine.filters', 'waxvine.services', 'waxvine.directives', 'waxvine.controllers']).
+config(['$routeProvider', function($routeProvider) {
+    $routeProvider.when('/library', {
+        templateUrl: 'partials/library.html',
+        controller: 'LibraryCtrl'
+    });
+    $routeProvider.when('/login', {
+        templateUrl: 'partials/login.html',
+        controller: 'LoginCtrl'
+    });
+    $routeProvider.otherwise({
+        redirectTo: '/library'
+    });
+}]);
