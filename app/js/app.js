@@ -12,6 +12,10 @@ config(['$routeProvider', function($routeProvider) {
         templateUrl: 'partials/login.html',
         controller: 'LoginCtrl'
     });
+    $routeProvider.when('/signup', {
+        templateUrl: 'partials/signup.html',
+        controller: 'SignUpCtrl'
+    });
     $routeProvider.otherwise({
         redirectTo: '/library'
     });

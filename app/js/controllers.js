@@ -46,4 +46,11 @@ controller('LoginCtrl', ['$scope', '$location', 'UserService', function($scope, 
     $scope.$on("angularFireAuth:error", function(evt, err) {
         UserService.authError(evt, err);
     });
+    
+    $scope.signUp = function() {
+        $location.path('/signup');  
+    };
+}]).
+controller('SignUpCtrl', ['$scope', '$location', function($scope, $location){
+    
 }]);
