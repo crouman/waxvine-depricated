@@ -9,41 +9,41 @@ controller('LibraryCtrl', ['$scope',
                            'LibraryService', 
                            'angularFire',
                            function($scope, $location, UserService, LibraryService, angularFire) {
-    var userEmail = UserService.getEmail();
-    if(typeof userEmail === 'undefined'){
+    var userId = UserService.getUserId();
+    if(typeof userId === 'undefined'){
         $location.path('/login');
         return;
     }
-    var userUrl = userEmail.replace('@', '_at_').replace('.', '_dot_');
+    var userUrl = userId.replace('@', '_at_').replace('.', '_dot_');
     
     var ref = new Firebase('https://waxvine.firebaseio.com/users/'+userUrl);
-
+    angularFire(ref, $scope, 'user');
+    
+    $scope.logout = function() {
+        UserService.logout();
+        $location.path('/login');
+    };
 }]).
-controller('LoginCtrl', ['$scope', '$location', 'UserService', 'angularFireAuth', function($scope, $location, UserService, angularFireAuth) {
-    var ref = new Firebase("https://waxvine.firebaseio.com/");
-    angularFireAuth.initialize(ref, {scope: $scope, name: "user"});
+controller('LoginCtrl', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
     
     $scope.login = function() {
-        angularFireAuth.login('password', {
-            email: $scope.email,
-            password: $scope.password
-        });
+        UserService.login($scope.email, $scope.password);
     };
     
     $scope.logout = function() {
-        angularFireAuth.logout();
+        UserService.logout();  
     };
     
     $scope.$on("angularFireAuth:login", function(evt, user) {
-        UserService.login(user);
-        //$location.path('/library');
+        UserService.loginEvent(evt, user);
+        $location.path('/library');
     });
     
     $scope.$on("angularFireAuth:logout", function(evt) {
-        console.log('user logged out.');
+        UserService.logoutEvent(evt);
     });
     
     $scope.$on("angularFireAuth:error", function(evt, err) {
-        console.log('error with user authentication');
+        UserService.authError(evt, err);
     });
 }]);
