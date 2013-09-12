@@ -19,6 +19,75 @@ h1{
 	background:transparent;
 }
 
+
+.disclaimer{
+	font-size:0.7em;
+	color:#b7b7b7;
+}
+
+.panel{
+	/*default for reasonable browsers*/
+	background:linear-gradient(rgb(255, 255, 255) 0%, rgb(245, 245, 245) 100%);
+	border:1px solid #D8D8D8;
+	border-radius:3px;
+}
+
+/*sign in & sign up forms*/
+#sign-in-container{
+	margin:auto;
+	margin-top:100px;
+	width:450px;
+}
+
+.sign-in-panel{
+	margin-top:10px;
+	padding:30px;
+}
+
+.sign-in-panel h1{
+	font-size:1.5em;
+	font-weight:normal;
+	margin:0;
+	margin-bottom:10px;
+}
+
+.sign-in-panel label, .sign-in-panel input[type="text"], .sign-in-panel input[type="password"]{
+	display:block;
+	margin:3px 0;	
+}
+
+.sign-in-panel input[type="text"], .sign-in-panel input[type="password"]{
+	width:300px;
+}
+
+.sign-in-panel label.small{
+	font-size:0.8em;
+}
+
+.sign-in-panel input[type="button"]{
+	/*default for reasonable browsers*/
+	background:linear-gradient(rgb(191,209,226) 0%, rgb(111,152,189) 50%);
+	border:1px solid #888;
+	color:#FFF;
+	font-family: 'Droid Sans', sans-serif;
+	font-size:0.9em;
+	margin:2px 0;
+	padding:5px 25px;
+}
+
+#sign-up{
+	display:none;
+}
+
+/*contains the password textbox and show password checkbox*/
+.pass-confirm input[type="password"], .pass-confirm label{
+	display:inline;
+}
+
+.pass-confirm input[type="checkbox"]{
+	margin-top:2px;	
+}
+
 /*header*/
 /*default version of the header is dark*/
 header, header.light{
