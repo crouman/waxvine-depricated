@@ -14,7 +14,7 @@ Git cheat sheet
 Get the latest and greatest
 ===========================
 
-If you have changes that isn't ready to be committed
+If you have changes that aren't ready to be committed
     1)  git stash
     2)  git pull --rebase
     3)  git stash pop
