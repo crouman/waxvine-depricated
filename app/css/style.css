@@ -51,12 +51,12 @@ h1{
 	margin-bottom:10px;
 }
 
-.sign-in-panel label, .sign-in-panel input[type="text"], .sign-in-panel input[type="password"]{
+.sign-in-panel label, .sign-in-panel input[type="text"], .sign-in-panel input[type="password"], .sign-in-panel input[type="email"]{
 	display:block;
 	margin:3px 0;	
 }
 
-.sign-in-panel input[type="text"], .sign-in-panel input[type="password"]{
+.sign-in-panel input[type="text"], .sign-in-panel input[type="password"], .sign-in-panel input[type="email"]{
 	width:300px;
 }
 
