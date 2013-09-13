@@ -5,7 +5,7 @@ body, h1{
 	font-family: 'Droid Sans', sans-serif;
 	margin:0;
 	padding:0;
-	background:url(../images/body-bg.png);
+	background:url(../img/body-bg.png);
 }
 
 h1{
@@ -119,7 +119,7 @@ header #library-name{
 }
 
 header #library-name h1, header #library-name h1:hover, header.light #library-name h1, header.light #library-name h1:hover{
-	background: url(../images/menu-indicator-light.png) left no-repeat;
+	background: url(../img/menu-indicator-light.png) left no-repeat;
 	background-position-x: 7px;
 	border-radius: 0px;
 	cursor: pointer;
@@ -134,7 +134,7 @@ header #library-name h1, header #library-name h1:hover, header.light #library-na
 
 /*dark icon for light background*/
 header.light #library-name h1, header.light #library-name h1:hover{
-	background: url(../images/menu-indicator-dark.png) left no-repeat;
+	background: url(../img/menu-indicator-dark.png) left no-repeat;
 	background-position-x: 7px;
 }
 
@@ -146,7 +146,7 @@ header #user{
 }
 
 header #user h2{
-	background:url(../images/user-image.png) right no-repeat;
+	background:url(../img/user-image.png) right no-repeat;
 	font-size:1.0em;
 	font-weight: normal;
 	line-height:2.2em;
@@ -259,17 +259,17 @@ nav{
 	left:5px;
 	width:255px;
 	border:1px solid #D8D8D8;
-	background: 234px 5px #FFF url(../images/search-inactive.png) no-repeat;
+	background: 234px 5px #FFF url(../img/search-inactive.png) no-repeat;
 	cursor:pointer;
 	z-index:10;
 }
 
 #search.active{
-	background: 234px 5px #FFF url(../images/search-active.png) no-repeat;
+	background: 234px 5px #FFF url(../img/search-active.png) no-repeat;
 }
 
 #search:hover{
-	background: 234px 5px #FFF url(../images/search-hover.png) no-repeat;
+	background: 234px 5px #FFF url(../img/search-hover.png) no-repeat;
 }
 
 #search input{
@@ -425,7 +425,7 @@ nav dl dd:hover {
 }
 
 #tabs div section.sec-title .comments{
-	background:url(../images/comment.png) no-repeat;
+	background:url(../img/comment.png) no-repeat;
 	color: #fff;
 	cursor:pointer;
 	float: right;
@@ -607,91 +607,91 @@ li.item-separator{
 
 /*icons*/
 .export{
-	background-image:url(../images/export.png);
+	background-image:url(../img/export.png);
 }
 
 .open{
-	background-image:url(../images/open.png);
+	background-image:url(../img/open.png);
 }
 
 .save{
-	background-image:url(../images/save.png);
+	background-image:url(../img/save.png);
 }
 
 .print{
-	background-image:url(../images/print.png);
+	background-image:url(../img/print.png);
 }
 
 .trend{	
-	background-image:url(../images/trend.png);
+	background-image:url(../img/trend.png);
 }
 
 .settings{
-	background-image:url(../images/settings.png);
+	background-image:url(../img/settings.png);
 }
 
 .edit{
-	background-image:url(../images/edit.png);
+	background-image:url(../img/edit.png);
 }
 
 .revert{
-	background-image:url(../images/revert.png);
+	background-image:url(../img/revert.png);
 }
 
 .compare{
-	background-image:url(../images/compare.png);
+	background-image:url(../img/compare.png);
 }
 
 .help{
-	background-image:url(../images/help.png);
+	background-image:url(../img/help.png);
 }
 
 .dashboard{
-	background-image:url(../images/dashboard.png);
+	background-image:url(../img/dashboard.png);
 }
 
 .clone{
-	background-image:url(../images/clone.png);	
+	background-image:url(../img/clone.png);	
 }
 
 .delete{
-	background-image:url(../images/delete.png);
+	background-image:url(../img/delete.png);
 }
 
 .default-indicator{
-	background-image:url(../images/default-indicator.png);
+	background-image:url(../img/default-indicator.png);
 }
 
 .default{
-	background-image:url(../images/default.png);
+	background-image:url(../img/default.png);
 }
 
 .help{
-	background-image:url(../images/help.png);
+	background-image:url(../img/help.png);
 }
 
 .style-guide{
-	background-image:url(../images/styleguide.png);
+	background-image:url(../img/styleguide.png);
 }
 
 .create{
-	background-image:url(../images/create.png);
+	background-image:url(../img/create.png);
 }
 
 .all-libs{
-	background-image:url(../images/all-libs.png);
+	background-image:url(../img/all-libs.png);
 }
 
 .users{
-	background-image:url(../images/users.png);
+	background-image:url(../img/users.png);
 }
 
 .notification{
-	background-image:url(../images/notification.png);
+	background-image:url(../img/notification.png);
 }
 
 .sign-out{
-	background-image:url(../images/sign-out.png);
+	background-image:url(../img/sign-out.png);
 }
 
 /*comment icon is referenced within .comments as a child of sec-title*/
