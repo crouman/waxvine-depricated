@@ -1,24 +1,16 @@
 @charset "utf-8";
 /* defaults */
 
-@font-face {
-  font-family: 'Droid Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Droid Sans'), local('DroidSans'), url(../fonts/s-BiyweUPV0v-yRb-cjciL3hpw3pgy2gAi-Ip7WPMi0.woff) format('woff');
-}
-
 body, h1{
-    font-family: 'Droid Sans', sans-serif;
+	font-family: 'Droid Sans', sans-serif;
 	margin:0;
 	padding:0;
-	background:url(../img/body-bg.png);
+	background:url(../images/body-bg.png);
 }
 
 h1{
 	background:transparent;
 }
-
 
 .disclaimer{
 	font-size:0.7em;
@@ -51,12 +43,12 @@ h1{
 	margin-bottom:10px;
 }
 
-.sign-in-panel label, .sign-in-panel input[type="text"], .sign-in-panel input[type="password"], .sign-in-panel input[type="email"]{
+.sign-in-panel label, .sign-in-panel input[type="text"], .sign-in-panel input[type="password"]{
 	display:block;
 	margin:3px 0;	
 }
 
-.sign-in-panel input[type="text"], .sign-in-panel input[type="password"], .sign-in-panel input[type="email"]{
+.sign-in-panel input[type="text"], .sign-in-panel input[type="password"]{
 	width:300px;
 }
 
@@ -119,7 +111,6 @@ header.light{
 	color:#333;
 }
 
-
 /*settings menu—parent and child lists*/
 /*parent and child lists*/
 header #library-name{
@@ -128,7 +119,7 @@ header #library-name{
 }
 
 header #library-name h1, header #library-name h1:hover, header.light #library-name h1, header.light #library-name h1:hover{
-	background: url(../img/menu-indicator-light.png) left no-repeat;
+	background: url(../images/menu-indicator-light.png) left no-repeat;
 	background-position-x: 7px;
 	border-radius: 0px;
 	cursor: pointer;
@@ -143,7 +134,7 @@ header #library-name h1, header #library-name h1:hover, header.light #library-na
 
 /*dark icon for light background*/
 header.light #library-name h1, header.light #library-name h1:hover{
-	background: url(../img/menu-indicator-dark.png) left no-repeat;
+	background: url(../images/menu-indicator-dark.png) left no-repeat;
 	background-position-x: 7px;
 }
 
@@ -155,7 +146,7 @@ header #user{
 }
 
 header #user h2{
-	background:url(../img/user-image.png) right no-repeat;
+	background:url(../images/user-image.png) right no-repeat;
 	font-size:1.0em;
 	font-weight: normal;
 	line-height:2.2em;
@@ -268,17 +259,17 @@ nav{
 	left:5px;
 	width:255px;
 	border:1px solid #D8D8D8;
-	background: 234px 5px #FFF url(../img/search-inactive.png) no-repeat;
+	background: 234px 5px #FFF url(../images/search-inactive.png) no-repeat;
 	cursor:pointer;
 	z-index:10;
 }
 
 #search.active{
-	background: 234px 5px #FFF url(../img/search-active.png) no-repeat;
+	background: 234px 5px #FFF url(../images/search-active.png) no-repeat;
 }
 
 #search:hover{
-	background: 234px 5px #FFF url(../img/search-hover.png) no-repeat;
+	background: 234px 5px #FFF url(../images/search-hover.png) no-repeat;
 }
 
 #search input{
@@ -355,7 +346,7 @@ nav dl dd:hover {
 
 #parent #component-header{	
 	margin-top:5px;
-	height:25px;
+	/*height:25px;*/
 }
 
 #parent #component-header h1{
@@ -366,7 +357,7 @@ nav dl dd:hover {
 	float:left;
 }
 
-#parent #component-header #add-remove{
+#parent #component-header #add-remove, #parent #component-header #status{
 	float:right;
 	font-size:0.7em;
 	margin-top:10px;
@@ -378,36 +369,43 @@ nav dl dd:hover {
 	color:#900;
 }
 
+
+#parent #component-header #status{
+	color:#000;
+	cursor:default;
+	font-weight:bold;
+}
+
+#parent #component-header label{
+	color:#666;
+	font-weight:normal;
+}
+
+#parent #component-header #item-status-options{
+	float:right;
+	font-size:0.7em;
+	margin-top:3px;
+	margin-right:5px;
+	list-style-type:none;
+}
+
+#parent #component-header #item-status-options li{
+	float:left;
+	margin-top:0px;
+}
+
+#parent #component-header #item-status-options li.status{
+	margin-top:8px;
+}
+
 /*tabs*/
 #tabs{
-    display: none;
 	position:absolute;
 	top:35px;
 	right:0px;
 	bottom:5px;
 	left:0;
 	font-family:'Droid Sans', sans-serif;
-}
-
-
-#loading-wrapper{
-    border: 1px solid #aaaaaa;
-    background: #ffffff url(../../img/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x;
-    top: 35px;
-    right: 0px;
-    left: 0px;
-    bottom: 5px;
-    position:absolute;
-}
-
-#loading{
-    background-image: url(../img/loading.gif);
-    width: 128px;
-    height: 128px;
-    position: absolute;
-    top: 250px;
-    left: 500px;
-    display: none;
 }
 
 /*jQueryUI class override*/
@@ -426,12 +424,27 @@ nav dl dd:hover {
 	padding-bottom:5px;
 }
 
+#tabs div section.sec-title .comments{
+	background:url(../images/comment.png) no-repeat;
+	color: #fff;
+	cursor:pointer;
+	float: right;
+	margin-top: 5px;
+	padding-top: 2px;
+	width: 17px;
+	height: 17px;
+	font-size: .5em;
+	text-align: center;
+}
+
 #tabs div section ul.sec-options{
 	float:right;
+	display:none;
 }
 
 #tabs div section ul.sec-options li{
 	float:left;
+	list-style-type:none;
 }
 
 #tabs div h2{
@@ -457,12 +470,12 @@ nav dl dd:hover {
 }
 
 #tabs div ul{
-	list-style-type:none;
+	/*list-style-type:none;*/
 	/*list-style-position:inside;*/
-	margin:0;
+	/*margin:0;
 	margin-bottom:20px;
 	margin-left:10px;
-	padding:0;
+	padding:0;*/
 }
 
 #tabs div ul li{
@@ -503,10 +516,23 @@ nav dl dd:hover {
 	left: 0;
 }
 
+/*HIGHTCHARTS*/
 /*fixing odd bug with hightcharts playing nicely with jQuery tabs*/
 #tabs .ui-tabs-panel[aria-expanded="false"]{
 	position: absolute;
 	top: -9999em;
+}
+
+.highcharts-container *{
+	font-family: 'Droid Sans', sans-serif !important;
+}
+
+#chart-connectivity-type, #chart-data-load{
+	border:1px solid #D8D8D8;
+	margin-bottom:20px;
+}
+
+#chart-data-load{
 }
 
 /*toolbar*/
@@ -553,10 +579,6 @@ a.icon:hover{
 	width:18px;
 }
 
-a.icon:active{
-	height:20px;
-}
-
 a.icon label{
 	color:transparent;
 	cursor:pointer;
@@ -585,88 +607,97 @@ li.item-separator{
 
 /*icons*/
 .export{
-	background-image:url(../img/export.png);
+	background-image:url(../images/export.png);
 }
 
 .open{
-	background-image:url(../img/open.png);
+	background-image:url(../images/open.png);
 }
 
 .save{
-	background-image:url(../img/save.png);
+	background-image:url(../images/save.png);
+}
+
+.print{
+	background-image:url(../images/print.png);
 }
 
 .trend{	
-	background-image:url(../img/trend.png);
+	background-image:url(../images/trend.png);
 }
 
 .settings{
-	background-image:url(../img/settings.png);
+	background-image:url(../images/settings.png);
 }
 
 .edit{
-	background-image:url(../img/edit.png);
+	background-image:url(../images/edit.png);
 }
 
 .revert{
-	background-image:url(../img/revert.png);
+	background-image:url(../images/revert.png);
 }
 
 .compare{
-	background-image:url(../img/compare.png);
+	background-image:url(../images/compare.png);
 }
 
 .help{
-	background-image:url(../img/help.png);
+	background-image:url(../images/help.png);
 }
 
 .dashboard{
-	background-image:url(../img/dashboard.png);
+	background-image:url(../images/dashboard.png);
 }
 
 .clone{
-	background-image:url(../img/clone.png);	
+	background-image:url(../images/clone.png);	
 }
 
 .delete{
-	background-image:url(../img/delete.png);
+	background-image:url(../images/delete.png);
 }
 
 .default-indicator{
-	background-image:url(../img/default-indicator.png);
+	background-image:url(../images/default-indicator.png);
 }
 
 .default{
-	background-image:url(../img/default.png);
+	background-image:url(../images/default.png);
 }
 
 .help{
-	background-image:url(../img/help.png);
+	background-image:url(../images/help.png);
 }
 
 .style-guide{
-	background-image:url(../img/styleguide.png);
+	background-image:url(../images/styleguide.png);
 }
 
 .create{
-	background-image:url(../img/create.png);
+	background-image:url(../images/create.png);
 }
 
 .all-libs{
-	background-image:url(../img/all-libs.png);
+	background-image:url(../images/all-libs.png);
 }
 
 .users{
-	background-image:url(../img/users.png);
+	background-image:url(../images/users.png);
 }
 
 .notification{
-	background-image:url(../img/notification.png);
+	background-image:url(../images/notification.png);
 }
 
 .sign-out{
-	background-image:url(../img/sign-out.png);
+	background-image:url(../images/sign-out.png);
 }
+
+/*comment icon is referenced within .comments as a child of sec-title*/
+.comment{	
+}
+
 
 /*toolbar button*/
 .toolbar a.toolbar-btn{		
