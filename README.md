@@ -20,13 +20,24 @@ If you have changes that aren't ready to be committed
     3)  git stash pop
     
 If you don't have any changes
-    1) git pull
+    1)  git pull
+
+List files that have changes
+===========================
+
+    git status
+
+See changes
+===========
+
+    git diff
     
 Commit your changes
 ===================
 
-1) git stash
-2) git pull --rebase
-3) git add .
-4) git commit -m 'your comments'
-5) git push origin gh-pages
+    1) git stash
+    2) git pull --rebase
+    3) git stash pop
+    4) git add .
+    5) git commit -m 'your comments'
+    6) git push origin gh-pages
