@@ -20,6 +20,12 @@ h1{
 .panel{
 	/*default for reasonable browsers*/
 	background:linear-gradient(rgb(255, 255, 255) 0%, rgb(245, 245, 245) 100%);
+	/*IE 10+*/
+	background:ms-linear-gradient(rgb(255, 255, 255) 0%, rgb(245, 245, 245) 100%);
+	/*IE 9 and earlier*/
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#FFF, endColorstr=#F5F5F5)";
+	/* Safari 5.1+, Mobile Safari, Chrome 10+ */
+  	background-image: -webkit-linear-gradient(top, #FFF, #F5F5F5);
 	border:1px solid #D8D8D8;
 	border-radius:3px;
 }
@@ -59,6 +65,12 @@ h1{
 .sign-in-panel input[type="button"]{
 	/*default for reasonable browsers*/
 	background:linear-gradient(rgb(191,209,226) 0%, rgb(111,152,189) 50%);
+	/*IE 10+*/
+	background:ms-linear-gradient(rgb(191,209,226) 0%, rgb(111,152,189) 50%);
+	/*IE 9 and earlier*/
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#BFD1E2, endColorstr=#6F98BD)";	
+	/* Safari 5.1+, Mobile Safari, Chrome 10+ */
+	 background-image: -webkit-linear-gradient(top, #BFD1E2, #6F98BD);
 	border:1px solid #888;
 	color:#FFF;
 	font-family: 'Droid Sans', sans-serif;
