@@ -25,7 +25,7 @@ h1{
 	/*IE 9 and earlier*/
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#FFFFFF, endColorstr=#F5F5F5)";
 	/* Safari 5.1+, Mobile Safari, Chrome 10+ */
-  	background-image: -webkit-linear-gradient(top, #FFF, #F5F5F5);
+  	background-image: -webkit-linear-gradient(top, #FFF, #F5F5F5 50%);
 	border:1px solid #D8D8D8;
 	border-radius:3px;
 }
