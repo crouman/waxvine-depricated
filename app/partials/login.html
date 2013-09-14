@@ -39,12 +39,12 @@
     <!--sign me up scotty-->     
     <div class="panel-content" id="sign-up">
       <h1>Create New Account</h1>
-      <label for="username">Email</label>
-      <input type="text" id="username" />
+      <label for="signUpEmail">Email</label>
+      input id="signUpEmail" type="email" ng-model="signUpEmail" />
       
-      <label for="password">Password</label>
+      <label for="signUpPassword">Password</label>
       <div class="pass-confirm">
-        <input type="password" id="password" />
+        <input id="signUpPassword" type="password" ng-model="signUpPassword" />
         <input type="checkbox" id="show-pass" /><label for="show-pass" class="small">Show password</label>
       </div>
     
