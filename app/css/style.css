@@ -70,7 +70,7 @@ h1{
 	/*IE 9 and earlier*/
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#BFD1E2, endColorstr=#6F98BD)";	
 	/* Safari 5.1+, Mobile Safari, Chrome 10+ */
-	 background: -webkit-linear-gradient(top, #BFD1E2, #6F98BD);
+	background: -webkit-linear-gradient(top, #BFD1E2, #6F98BD 50%);
 	border:1px solid #888;
 	color:#FFF;
 	font-family: 'Droid Sans', sans-serif;
