@@ -83,13 +83,21 @@ h1{
 	display:none;
 }
 
+.pass-confirm{
+	margin: 0;
+	padding: 0;
+	margin-bottom: 5px;
+	padding-left: 1px;
+}
+
 /*contains the password textbox and show password checkbox*/
 .pass-confirm input[type="password"], .pass-confirm label{
 	display:inline;
 }
 
 .pass-confirm input[type="checkbox"]{
-	margin-top:2px;	
+	margin: 0;
+	margin-right: 4px;
 }
 
 /*header*/
