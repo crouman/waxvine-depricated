@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <!--header-->
 <header class="light">
 	<div id="library-name">
@@ -299,3 +300,306 @@
     </div>
 <!--end parent-->  
 </div>
+=======
+<!--header-->
+    <header class="light">
+    	<div id="library-name">
+        <h1>Library Name</h1>
+        <ul id="settings-menu" class="menu">
+        	<li class="dashboard">dashboard</li>
+          <li class="divider"><!----></li>
+          <li class="edit">edit library</li>
+          <li class="clone">clone library</li>
+          <li class="delete">delete library</li>
+          <li class="divider"><!----></li>
+          <li class="style-guide">generate style guide</li>
+          <li class="divider"><!----></li>          
+          <li class="default">set as default library</li>
+          <li class="users">manage users</li>
+          <li class="divider"><!----></li>
+          <li class="all-libs">view all libraries</li>
+          <!--child items-->
+            <!--<li class="child default-indicator" title="Default Library">library 1</li>
+            <li class="child">library 2</li>
+            <li class="child">library 3</li>-->
+          <!--end child items-->
+          <li class="divider"><!----></li>
+          <li class="create">create new library</li>
+        </ul>
+      </div>
+      <!--end library name-->
+      
+      <!--user menu-->
+      <div id="user">
+      	<!--
+        	//this span allows for proper padding of user and profile image
+          //since I'm floating the profile pic to the right it gets slammed
+          //all the way to the side without the ability to pad it; the span
+          //allows for this
+        -->
+      	<span id="user-name">
+        	<h2>Chris Rouman</h2>
+        </span>          
+        <ul id="user-menu" class="menu">
+          <li class="all-libs">Libraries</li>
+          <li class="notification">Notifications</li>
+          <li class="divider"><!----></li>
+          <li class="settings">Account Settings</li>
+          <li class="divider"><!----></li>
+          <li class="sign-out">Sign out</li>
+        </ul>      
+      </div>
+    </header>
+    
+    <!--search-->
+    <div id="search">
+      <input id="search-box" type="text" placeholder="Search for solutions...">
+    </div>
+    
+    <!--left-hand navigation-->
+    <nav>   	
+      <!--components list-->
+      <dl>
+        <dt>user input</dt>
+          <dd class="">auto-complete</dd>
+          <dd>button</dd>
+          <dd>combo-box</dd>
+          <dd>hint text</dd>
+          <dd>keyboard shortcuts</dd>
+          <dd>modal panel</dd>
+          <dd>menu</dd>
+          <dd>slider</dd>
+          <dd>spinner</dd>
+          <dd>text entry</dd>
+          <dd>time entry</dd>
+          <dd>toolbar</dd>
+          <dd>wizard</dd>
+        <dt>data display</dt>
+          <dd>charting</dd>
+          <dd>data table</dd>
+          <dd>filtering</dd>
+          <dd>lists</dd>
+          <dd>map</dd>
+          <dd>paging</dd>
+          <dd>sorting</dd>
+          <dd>tree</dd>
+        <dt>page layout</dt>
+          <dd>accordion</dd>
+          <dd>dashboard</dd>
+          <dd>grids</dd>
+          <dd>hide/Show</dd>
+          <dd>panel</dd>
+          <dd>tabs</dd>
+        <dt>messaging</dt>
+          <dd>dialog</dd>
+          <dd>form validation</dd>
+          <dd>help content</dd>
+          <dd>messaging</dd>
+          <dd>progress indicator</dd>
+          <dd>tooltip</dd>
+        <dt>multimedia</dt>
+          <dd>audio &	video</dd>
+          <dd>lightbox</dd>
+          <dd>slide show</dd>
+        <dt>visuals</dt>
+          <dd>color schemes</dd>
+          <dd>icons</dd>
+          <dd>typeface</dd>
+      </dl>
+    </nav>
+    
+    <div id="parent">    	
+      <!--<div class="toolbar">
+      	<ul>
+	        <li><a href="#" class="icon save" title="Save..."><label>save</label></a></li>
+         </ul>
+      </div>-->
+      <!--component name-->
+      <div id="component-header">
+        <h1>auto-complete</h1>
+        <!--<span id="add-remove" class="remove">- Remove from library</span>-->
+        <ul id="item-status-options">
+        	<li class="status"><label>Status: </label>Published</li>
+          <li><a href="#" class="icon edit" title="Edit"><label>edit</label></a></li>
+          <li><a href="#" class="icon print" title="Print..."><label>print</label></a></li>
+          <!--<li><a href="#" class="icon revert" title="Revert to original"><label>revert</label></a></li>
+          <li><a href="#" class="icon compare" title="Compare to original"><label>compare</label></a></li>-->
+        </ul>
+      </div>
+      
+      <!--tabset-->
+        <div id="tabs">
+        	<!--<img src="images/comments.png" width="16" height="16" alt="comments" class="comments">-->
+          <ul>
+            <li><a href="#tabs-1">overview</a></li>
+            <li><a href="#tabs-2">solution</a></li>
+            <li><a href="#tabs-3">testing</a></li>
+          </ul>
+          <!--TAB 1-->
+          <div id="tabs-1">
+          	<article>
+            	<!--title-->
+          		<section class="sec-title">
+                <h2>Description</h2>
+                <span class="comments" title="Add or edit comment">3</span>
+                <ul class="sec-options">
+                	<li><a href="#" class="icon edit" title="Edit this section"><label>edit</label></a></li>
+                	<li><a href="#" class="icon revert" title="Revert to original"><label>revert</label></a></li>
+                	<li><a href="#" class="icon compare" title="Compare to original"><label>compare</label></a></li>
+                </ul>
+            	</section>
+              
+              <!--content-->
+              <section class="content">
+                <p>Auto-suggest presents a list of suggested values that match the user’s input. The list of matching options is reduced as the user continues to type into the field. However, a user’s input is not limited to only the options presented in the list. The user always has the option of providing their own value.</p>
+                </section>
+                
+            	<!--title-->
+          		<section class="sec-title">
+                <h2>When to use</h2>
+                <span class="comments" title="Add or edit comment" title="Add or edit comment">+</span>
+                <ul class="sec-options">
+                	<li><a href="#" class="icon edit" title="Edit this section"><label>edit</label></a></li>
+                	<li><a href="#" class="icon revert" title="Revert to original"><label>revert</label></a></li>
+                	<li><a href="#" class="icon compare" title="Compare to original"><label>compare</label></a></li>
+                </ul>
+            	</section>
+              <!--content-->
+              <section class="content">
+                <p>When lists are very long but the values are familiar to the user such as countries and states, auto-complete works well. This is especially the case if your user can locate a value without needing to see the entire list. But values don’t have to be as generic as country and states. It’s also great for more esoteric values such as industry specific terms or codes that only your users might know.</p>
+                <p>Auto-complete also works well if the business requirements allows for unique values. In other words, the user can provide their own value if a predefined value does not work as well.</p>
+                <p>Since our solution allows for a more enhanced display of data (as compared to a typical drop-down list), you may consider auto-complete. This is especially important if your users need to see more than a single piece of data in order to differentiate the list options (e.g locating a single location among groups of geographic regions).</p>
+              </section>
+              
+                
+            	<!--title-->
+          		<section class="sec-title">
+                <h2>When not to use</h2>
+                <span class="comments" title="Add or edit comment" title="Add or edit comment">2</span>
+                <ul class="sec-options">
+                	<li><a href="#" class="icon edit" title="Edit this section"><label>edit</label></a></li>
+                	<li><a href="#" class="icon revert" title="Revert to original"><label>revert</label></a></li>
+                	<li><a href="#" class="icon compare" title="Compare to original"><label>compare</label></a></li>
+                </ul>
+            	</section>
+              <!--content-->
+              <section class="conent">
+                <p>Ensure that list values are distinguishable from one another. If list entries are highly repetitive, auto-suggest loses its usefulness (e.g. if there are 50 entries that start “ABC Corp”).</p>
+                <p>Auto-complete is NOT a replacement for a standard drop-down. So stop considering it.</p>
+              </section>
+                
+            	<!--title-->
+          		<section class="sec-title">
+                <h2>Best Practices</h2>
+                <span class="comments" title="Add or edit comment">5</span>
+                <ul class="sec-options">
+                	<li><a href="#" class="icon edit" title="Edit this section"><label>edit</label></a></li>
+                	<li><a href="#" class="icon revert" title="Revert to original"><label>revert</label></a></li>
+                	<li><a href="#" class="icon compare" title="Compare to original"><label>compare</label></a></li>
+                </ul>
+            	</section>
+              <!--content-->
+              <section class="content">
+                <p>Present no more than three related data elements per list value. Although auto-complete can pull together and present separate pieces of data in a single list value, presenting more than three values per line may actually make it more difficult for a user to differentiate the options because there is more data to scan.</p>
+              </section>
+            </article>
+          </div>
+                    
+          <!--TAB 2-->
+          <div id="tabs-2">
+          	<article>
+            	<!--title-->
+          		<section class="sec-title">
+                <h2>Design</h2>
+                <span class="comments" title="Add or edit comment">10</span>
+                <ul class="sec-options">
+                	<li><a href="#" class="icon edit" title="Edit this section"><label>edit</label></a></li>
+                	<li><a href="#" class="icon revert" title="Revert to original"><label>revert</label></a></li>
+                	<li><a href="#" class="icon compare" title="Compare to original"><label>compare</label></a></li>
+                </ul>
+            	</section>
+              
+              <!--content-->
+              <section class="content">
+		            <p>Phasellus mattis tincidunt nibh. Cras orci urna, blandit id, pretium vel, aliquet ornare, felis. Maecenas scelerisque sem non nisl. Fusce sed lorem in enim dictum bibendum.</p>
+	            </section>
+            </article>
+            
+            <article>
+            	<!--title-->
+          		<section class="sec-title">
+                <h2>Implementation Details</h2>
+                <span class="comments" title="Add or edit comment">+</span>
+                <ul class="sec-options">
+                	<li><a href="#" class="icon edit" title="Edit this section"><label>edit</label></a></li>
+                	<li><a href="#" class="icon revert" title="Revert to original"><label>revert</label></a></li>
+                	<li><a href="#" class="icon compare" title="Compare to original"><label>compare</label></a></li>
+                </ul>
+            	</section>
+              
+              <!--content-->
+              <section class="content">
+		            <p>Phasellus mattis tincidunt nibh. Cras orci urna, blandit id, pretium vel, aliquet ornare, felis. Maecenas scelerisque sem non nisl. Fusce sed lorem in enim dictum bibendum.</p>
+	            </section>
+            </article>
+          </div>
+          
+          <!--TAB 3-->
+          <div id="tabs-3">
+          	<article>
+            	<!--title-->
+          		<section class="sec-title">
+                <h2>Testing Procedures</h2>
+                <span class="comments" title="Add or edit comment">+</span>
+                <ul class="sec-options">
+                	<li><a href="#" class="icon edit" title="Edit this section"><label>edit</label></a></li>
+                	<li><a href="#" class="icon revert" title="Revert to original"><label>revert</label></a></li>
+                	<li><a href="#" class="icon compare" title="Compare to original"><label>compare</label></a></li>
+                </ul>
+            	</section>
+              
+              <!--content-->
+              <section class="content">
+		            <p>Nam dui erat, auctor a, dignissim quis, sollicitudin eu, felis. Pellentesque nisi urna, interdum eget, sagittis et, consequat vestibulum, lacus. Mauris porttitor ullamcorper augue.</p>
+	            </section>
+                    
+            	<!--title-->
+              <!--this section uses a toolbar for allowing content to be saved, opened, etc; this section is not editable otherwise-->
+          		<section class="sec-title">
+                <h2>Functional Checklist</h2>    
+                <span class="comments" title="Add or edit comment">+</span>
+              </section>
+              
+              <!--content-->
+              <section class="content">          
+                <ul>
+                  <li><label>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</label></li>
+                  <li><label>Phasellus commodo lacus in neque vehicula elementum.</label></li>
+                  <li><label>Aliquam vulputate ipsum tempor augue suscipit, vitae tristique nunc adipiscing.</label></li>
+                  <li><label>Ut varius mi pulvinar eros semper aliquam at nec orci.</label></li>
+                </ul>
+              </section>
+              
+          		<section class="sec-title">
+                <h2>Visual Checklist</h2>
+                <span class="comments" title="Add or edit comment">+</span>
+              </section>
+              
+              <!--content-->
+              <section class="content">
+                <ul>
+                  <li><label>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</label></li>
+                  <li><label>Phasellus commodo lacus in neque vehicula elementum.</label></li>
+                  <li><label>Aliquam vulputate ipsum tempor augue suscipit, vitae tristique nunc adipiscing.</label></li>
+                  <li><label>Ut varius mi pulvinar eros semper aliquam at nec orci.</label></li>
+                </ul>
+                </ul>
+              </section>
+            </article>          
+          </div>
+          
+        <!--end tabs-->  
+        </div>
+    <!--end parent-->  
+    </div>
+>>>>>>> Stashed changes
