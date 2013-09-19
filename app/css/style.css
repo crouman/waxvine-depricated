@@ -140,7 +140,7 @@ header #library-name{
 
 header #library-name h1, header #library-name h1:hover, header.light #library-name h1, header.light #library-name h1:hover{
 	background: url(../img/menu-indicator-light.png) left no-repeat;
-	background-position-x: 7px;
+	background-position: 7px 10px;
 	border-radius: 0px;
 	cursor: pointer;
 	display: inline;
