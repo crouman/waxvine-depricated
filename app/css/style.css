@@ -147,7 +147,7 @@ header #library-name h1, header #library-name h1:hover, header.light #library-na
 	float: left;
 	font-size: 1.5em;
 	font-weight: normal;
-	padding: 3px 7px;
+	padding: 4px 7px;
 	text-indent: 20px;
 	z-index: 100;
 }
@@ -155,7 +155,7 @@ header #library-name h1, header #library-name h1:hover, header.light #library-na
 /*dark icon for light background*/
 header.light #library-name h1, header.light #library-name h1:hover{
 	background: url(../img/menu-indicator-dark.png) left no-repeat;
-		background-position:7px 0;
+		background-position:7px 10px;
 
 }
 
