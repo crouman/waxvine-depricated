@@ -155,7 +155,8 @@ header #library-name h1, header #library-name h1:hover, header.light #library-na
 /*dark icon for light background*/
 header.light #library-name h1, header.light #library-name h1:hover{
 	background: url(../img/menu-indicator-dark.png) left no-repeat;
-	background-position-x: 7px;
+		background-position:7px 0;
+
 }
 
 header #user{
