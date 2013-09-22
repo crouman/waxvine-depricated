@@ -133,7 +133,7 @@ header.light{
 
 /*settings menu—parent and child lists*/
 /*parent and child lists*/
-header #library-name{
+header #library-name, header #dashboard{
 	float:left;
 	padding: 0 3px;
 }
