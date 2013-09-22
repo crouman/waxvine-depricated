@@ -147,16 +147,21 @@ header #library-name h1, header #library-name h1:hover, header.light #library-na
 	float: left;
 	font-size: 1.5em;
 	font-weight: normal;
-	padding: 4px 7px;
+	padding: 3px 7px;
 	text-indent: 20px;
 	z-index: 100;
+}
+
+header #dashboard h1{
+	background: url(../img/dashboard.png) left no-repeat;
+	background-position-x: 7px;
+	cursor:default;
 }
 
 /*dark icon for light background*/
 header.light #library-name h1, header.light #library-name h1:hover{
 	background: url(../img/menu-indicator-dark.png) left no-repeat;
-		background-position:7px 10px;
-
+	background-position-x: 7px;
 }
 
 header #user{
@@ -253,6 +258,124 @@ ul.menu li.divider:hover{
 	background-color:transparent;
 	border-top-color:transparent;
 	cursor:default;
+}
+
+/*dasbboard*/
+
+#panels-left{	
+	width: 300px;
+	margin-left: 5px;
+}
+
+.panel-dash{
+	background-color: #fff;
+	border: 1px solid #AAA;
+	padding: 5px;
+	margin-bottom:10px;
+}
+
+.panel-dash div:first-child{
+	/*background: linear-gradient(to bottom, #e3e3e3 0%,#ccc 100%);*/
+	background-image: -webkit-linear-gradient(top, #e3e3e3, #ccc);
+}
+
+.panel-dash h2{
+	border: 1px solid #AAA;
+	font-size: 1.0em;
+	font-weight: normal;
+	margin: 0px;
+	padding: 5px;
+	padding-left:30px;
+	text-transform: capitalize;
+}
+
+.panel-dash h2.icon{
+	background-position:5px;
+	background-repeat:no-repeat;
+}
+
+.panel-dash dl{
+	margin-top:5px;
+}
+
+.panel-dash dt{
+	float:left;
+}
+
+.panel-dash dl.activity-list dt{
+	float:none;
+	text-transform:none;
+}
+
+.panel-dash dd.date{
+	color:#999;
+	font-size:0.7em;
+	margin:0;
+	margin-bottom:5px;
+	line-height:0.8em;
+}
+
+.panel-dash dd, .panel-dash dt{
+	font-size:0.9em;
+	padding:5px 10px 0px 5px;
+	text-transform:capitalize;
+}
+
+/*parent dashboard container housing the main content*/
+#dash-parent div.library-card{
+	background-image: -webkit-linear-gradient(top, #fff, #F5F5F5);
+	border:1px solid #999;
+	float: left;
+	margin: 20px 10px;
+	padding:15px;
+	height:245px;
+	min-width: 200px;
+}
+
+#dash-parent div.library-card h3{
+	color:#333;
+	font-size:1.0em;
+	margin:0;
+	margin-bottom:10px;
+}
+
+#dash-parent div.library-card-actions{		
+	overflow:hidden;
+	width:170px;
+	margin:0 auto;
+}
+
+#dash-parent div.library-card-actions a{
+	margin-left:5px;
+	margin-right:5px;
+	cursor:pointer;
+}
+
+#dash-parent div.library-card-actions a[class~="separator"]:hover{
+	cursor:default;
+	background-color:transparent;
+	border:1px solid;
+	border-color:transparent;
+}
+
+#dash-parent div.library-card h3#new-library{
+	color:#CCC;
+	margin:auto;
+	margin-top:100px;
+	text-align:center;
+}
+
+#dash-parent div.library-card dl{
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 15px;
+}
+
+#dash-parent div.library-card dd, #dash-parent div.library-card dt{
+	padding:5px 10px 0 0;
+}
+
+#dash-parent .panel-dash{
+	overflow:hidden;
 }
 
 /*navigation*/
@@ -354,15 +477,19 @@ nav dl dd:hover {
 }
 
 /*parent container*/
-#parent{
+#parent, #dash-parent{
 	position:absolute;
-	top:55px;
+	top:56px;
 	left:270px;
 	right:5px;
 	bottom:0px;
 	margin:0;
 	padding:0;
 	overflow:hidden;
+}
+
+#dash-parent{
+	left:310px;
 }
 
 #parent #component-header{	
@@ -683,6 +810,14 @@ li.item-separator{
 	background-image:url(../img/default-indicator.png);
 }
 
+.default-unselected{
+	background-image:url(../img/default-unselected.png);
+}
+
+.default-selected{
+	background-image:url(../img/default-selected.png);
+}
+
 .default{
 	background-image:url(../img/default.png);
 }
@@ -717,6 +852,18 @@ li.item-separator{
 
 /*comment icon is referenced within .comments as a child of sec-title*/
 .comment{	
+}
+
+.stats{
+	background-image:url(../images/stats.png);
+}
+
+.activity{
+	background-image:url(../images/activity.png);
+}
+
+.separator{
+	background-image:url(../images/separator.png);
 }
 
 
