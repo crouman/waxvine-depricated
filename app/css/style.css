@@ -138,7 +138,7 @@ header #library-name, header #dashboard{
 	padding: 0 3px;
 }
 
-header #library-name h1, header #library-name h1:hover, header.light #library-name h1, header.light #library-name h1:hover{
+header #library-name h1, header #library-name h1:hover, header.light #library-name h1, header.light #library-name h1:hover, header #dashboard h1{
 	background: url(../img/menu-indicator-light.png) left no-repeat;
 	background-position: 7px 10px;
 	border-radius: 0px;
