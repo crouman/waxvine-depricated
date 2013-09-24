@@ -27,23 +27,23 @@
       <!--end library name-->
       
       <!--user menu-->
-      <div id="user" drop-down="{backgroundColor: '#757B8C'}">
+      <div ng-directive="dropDown" id="user" drop-down="{backgroundColor: '#757B8C'}">
       	<!--
         	//this span allows for proper padding of user and profile image
           //since I'm floating the profile pic to the right it gets slammed
           //all the way to the side without the ability to pad it; the span
           //allows for this
         -->
-      	<span id="user-name">
-        	<h2>{{user.name}}</h2>
+      	<span drop-down-label id="user-name">
+        	<h2>{{user.email}}</h2>
         </span>          
-        <ul id="user-menu" class="menu">
+        <ul drop-down-menuList id="user-menu" class="menu">
           <li class="all-libs">Libraries</li>
           <li class="notification">Notifications</li>
           <li class="divider"><!----></li>
           <li class="settings">Account Settings</li>
           <li class="divider"><!----></li>
-          <li class="sign-out">Sign out</li>
+          <li class="sign-out"><a ng-click="logout()">Sign out</a></li>
         </ul>      
       </div>
     </header>
