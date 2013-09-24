@@ -17,6 +17,13 @@ h1{
 	color:#b7b7b7;
 }
 
+.link-label{
+	font-size:0.8em;
+	color:#00E;
+	cursor:pointer;
+	text-decoration:underline;
+}
+
 .panel{
 	/*default for reasonable browsers*/
 	background:linear-gradient(rgb(255, 255, 255) 0%, rgb(245, 245, 245) 100%);
