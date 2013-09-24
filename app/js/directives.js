@@ -65,7 +65,7 @@ angular.module('waxvine.directives', []).
             restrict: 'A',
             // responsible for registering DOM listeners as well as updating the DOM
             link: function(scope, element, attrs) {
-                var options = scope.$eval(attrs.dropDown);
+                var options = scope.$eval(attrs.searchBox);
                 var searchBox = $(element);
                 var searchInput = $(element).children('input');
     

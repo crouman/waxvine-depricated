@@ -1,7 +1,7 @@
 <!--header-->
     <header ng-directive="dropDown">
     	<div id="library-name" drop-down="{backgroundColor: '#757B8C'}">
-        <h1  drop-down-label>Library Name</h1>
+        <h1 drop-down-label>Library Name</h1>
         <ul drop-down-menuList id="settings-menu" class="menu">
         	<li class="dashboard">dashboard</li>
           <li class="divider"><!----></li>
@@ -49,7 +49,7 @@
     </header>
     
     <!--search-->
-    <div id="search" search-box="{blurColor: '#FFF', focusColor: '#FFFFBF'}">
+    <div id="search" ng-directive="searchBox" search-box="{blurColor: '#FFF', focusColor: '#FFFFBF'}">
       <input id="search-box" type="text" placeholder="Search for solutions...">
     </div>
     
