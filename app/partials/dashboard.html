@@ -1,0 +1,154 @@
+<!--header-->
+    <header ng-directive="dropDown">
+    	<div id="library-name" drop-down="{backgroundColor: '#757B8C'}">
+        <h1 drop-down-label>Library Name</h1>
+        <ul drop-down-menuList id="settings-menu" class="menu">
+        	<li class="dashboard">dashboard</li>
+          <li class="divider"><!----></li>
+          <li class="edit">edit library</li>
+          <li class="clone">clone library</li>
+          <li class="delete">delete library</li>
+          <li class="divider"><!----></li>
+          <li class="style-guide">generate style guide</li>
+          <li class="divider"><!----></li>          
+          <li class="default">set as default library</li>
+          <li class="users">manage users</li>
+          <li class="divider"><!----></li>
+          <li class="all-libs">view all libraries</li>
+          <!--child items-->
+            <!--<li class="child default-indicator" title="Default Library">library 1</li>
+            <li class="child">library 2</li>
+            <li class="child">library 3</li>-->
+          <!--end child items-->
+          <li class="divider"><!----></li>
+          <li class="create">create new library</li>
+        </ul>
+      </div>
+      <!--end library name-->
+      
+      <!--user menu-->
+      <div ng-directive="dropDown" id="user" drop-down="{backgroundColor: '#757B8C'}">
+      	<!--
+        	//this span allows for proper padding of user and profile image
+          //since I'm floating the profile pic to the right it gets slammed
+          //all the way to the side without the ability to pad it; the span
+          //allows for this
+        -->
+      	<span drop-down-label id="user-name">
+        	<h2>{{user.email}}</h2>
+        </span>          
+        <ul drop-down-menuList id="user-menu" class="menu">
+          <li class="all-libs">Libraries</li>
+          <li class="notification">Notifications</li>
+          <li class="divider"><!----></li>
+          <li class="settings">Account Settings</li>
+          <li class="divider"><!----></li>
+          <li class="sign-out"><a ng-click="logout()">Sign out</a></li>
+        </ul>      
+      </div>
+    </header>
+    
+    <div id="panels-left">    
+      <!--panel-->
+      <div class="panel-dash">
+        <div><h2 class="stats icon">by the numbers</h2></div>
+        <dl>
+          <dt>total items: </dt>
+          <dd class="">30</dd>
+          <dt>published items:</dt>
+          <dd class="">25</dd>
+          <dt>draft items:</dt>
+          <dd class="">5</dd>
+          <dt>categories:</dt>
+          <dd class="">6</dd>
+        </dl>
+      </div>  
+      <!--panel-->
+      <div class="panel-dash">
+        <div><h2 class="activity icon">activity</h2></div>        
+        <dl class="activity-list">
+          <dt>Chris Rouman updated Combo-box </dt>
+          <dd class="date">22-Sep-2013</dd>
+          <dt>Chris Rouman added Auto-suggest to Nordstrom.com</dt>
+          <dd class="date">20-Sep-2013</dd>
+          <dt>Hellie Walter added Modal Panel to Nordtrom.com</dt>
+          <dd class="date">15-Sep-2013</dd>
+          <dt>Hellie Walter created Modal Panel</dt>
+          <dd class="date">15-Sep-2013</dd>
+        </dl>
+      </div>
+    </div>
+    
+    <div id="dash-parent">      
+      <div class="panel-dash">
+        <div><h2 class="all-libs icon">all libraries</h2></div>
+        
+        <div class="library-card" onClick="location='#/library/{{library.id}}'">
+          <h3>Nordstrom.com</h3>
+          <dl>
+            <dt>total entries: </dt>
+            <dd>20</dd>
+            <dt>published: </dt>
+            <dd>18</dd>
+            <dt>drafts: </dt>
+            <dd>2</dd>
+          </dl>
+          
+          <dl>
+            <dt>created on: </dt>
+            <dd>09-Jun-2013</dd>
+            <dt>last updated: </dt>
+            <dd>12-Sep-2013</dd>
+            <dt>updated by: </dt>
+            <dd>Chris Rouman</dd>
+          </dl>
+          
+          <!--library card actions-->
+          <div class="library-card-actions">
+            <a class="icon edit" title="Edit Library">edit</a>
+            <a class="icon clone" title="Clone Library">clone</a>
+            <a class="icon delete" title="Delete Library">delete</a>
+            <a class="icon separator">&nbsp;</a>
+            <a class="icon default-selected" title="This is the Default Library">toggle default setting</a>
+          </div>
+          
+        </div>
+              
+        <div class="library-card">
+          <h3>Mobile Nordstrom.com</h3>
+          <dl>
+            <dt>total entries: </dt>
+            <dd>20</dd>
+            <dt>published: </dt>
+            <dd>18</dd>
+            <dt>drafts: </dt>
+            <dd>2</dd>
+          </dl>
+          
+          <dl>
+            <dt>created on: </dt>
+            <dd>09-Jun-2013</dd>
+            <dt>last updated: </dt>
+            <dd>12-Sep-2013</dd>
+            <dt>updated by: </dt>
+            <dd>Chris Rouman</dd>
+          </dl>
+          
+          <!--library card actions-->
+          <div class="library-card-actions">
+            <a class="icon edit" title="Edit Library">edit</a>
+            <a class="icon clone" title="Clone Library">clone</a>
+            <a class="icon delete" title="Delete Library">delete</a>
+            <a class="icon separator">&nbsp;</a>
+            <a class="icon default-unselected" title="Make this the Default Library">toggle default setting</a>
+          </div>
+        </div>
+        
+        <!--create new library-->
+        <div class="library-card">
+          <h3 id="new-library">+ Create New Library</h3>          
+        </div>
+      </div>
+    <!--end parent-->  
+    </div>
+
