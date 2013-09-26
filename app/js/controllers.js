@@ -3,6 +3,27 @@
 /* Controllers */
 
 angular.module('waxvine.controllers', []).
+controller('DashboardCtrl', ['$scope', 
+                           '$location',
+                           'UserService',
+                           'DashboardService', 
+                           'angularFire',
+                           function($scope, $location, UserService, DashboardService, angularFire) {
+    var userId = UserService.getUserId();
+    if(typeof userId === 'undefined'){
+        $location.path('/login');
+        return;
+    }
+    var userUrl = userId.replace('@', '_at_').replace('.', '_dot_');
+    
+    var ref = new Firebase('https://waxvine.firebaseio.com/users/'+userUrl);
+    angularFire(ref, $scope, 'user');
+    
+    $scope.logout = function() {
+        UserService.logout();
+        $location.path('/login');
+    };
+}]).
 controller('LibraryCtrl', ['$scope', 
                            '$location',
                            'UserService',
@@ -36,7 +57,7 @@ controller('LoginCtrl', ['$scope', '$location', 'UserService', function($scope, 
     
     $scope.$on("angularFireAuth:login", function(evt, user) {
         UserService.loginEvent(evt, user);
-        $location.path('/library');
+        $location.path('/dashboard');
     });
     
     $scope.$on("angularFireAuth:logout", function(evt) {

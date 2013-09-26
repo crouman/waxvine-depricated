@@ -39,4 +39,7 @@ factory('UserService', ['$rootScope','$http', 'angularFireAuth', function($rootS
 }]).
 factory('LibraryService', function($http) {
 
+}).
+factory('DashboardService', function($http) {
+
 });

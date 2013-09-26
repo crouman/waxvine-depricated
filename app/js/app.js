@@ -8,6 +8,10 @@ config(['$routeProvider', function($routeProvider) {
         templateUrl: 'partials/library.html',
         controller: 'LibraryCtrl'
     });
+		$routeProvider.when('/dashboard', {
+        templateUrl: 'partials/dashboard.html',
+        controller: 'DashboardCtrl'
+    })
     $routeProvider.when('/login', {
         templateUrl: 'partials/login.html',
         controller: 'LoginCtrl'
