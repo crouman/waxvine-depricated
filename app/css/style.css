@@ -272,6 +272,7 @@ ul.menu li.divider:hover{
 #panels-left{	
 	width: 300px;
 	margin-left: 5px;
+	position:absolute;
 }
 
 .panel-dash{
