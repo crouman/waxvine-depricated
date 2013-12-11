@@ -400,7 +400,7 @@ overflow:hidden;
 /*navigation*/
 nav{
 border:1px solid #D8D8D8;
-border-top:none;
+/*border-top:none;*/
 background:#FAFAFA;
 /*background:linear-gradient(rgb(255, 255, 255) 0%, rgb(245, 245, 245) 100%);*/ 
 /*background-color:#F0F0F0;*/
@@ -410,7 +410,7 @@ position:absolute;
 width:255px;
 overflow-y:auto;
 overflow-x:none;
-top:77px;
+top:60px;
 left:5px;
 bottom:5px;
 text-transform:capitalize;
@@ -450,7 +450,10 @@ background-color:#FFC !important;
 
 /*component list*/
 nav dl dt{
-font-size:1.2em;
+}
+
+nav dl dt:first-child{
+	border-top:none;
 }
 
 nav dl{
@@ -460,12 +463,13 @@ background:#FFF;
 color:#444;
 }
 
-nav dt{
-padding:4px 0 4px 5px;
+nav dl dt{
 background: linear-gradient(to bottom, #ffffff 0%,#f5f5f5 100%);
 border:1px solid #D8D8D8;
 border-left:0;
 border-right:0;
+font-size:1.2em;
+padding:4px 0 4px 5px;
 }
 
 nav dl dd{
